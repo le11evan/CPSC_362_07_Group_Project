@@ -10,6 +10,9 @@ to convenient and sanitary bathrooms.
 ## Members
 
 Evan Le - le11evan@csu.fullerton.edu
+
 Isaiah George - isaiahcabugos@csu.fullerton.edu
+
 Guang Chen - kp82611@csu.fullerton.edu
+
 Justin Bui - Justin_Bui12@csu.fullerton.edu
