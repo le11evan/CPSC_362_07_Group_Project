@@ -72,6 +72,8 @@ input, select, textarea {
 	appearance: none;
 }
 
+#map { height: 180px; }
+
 /* Basic */
 
 	html {
@@ -2631,3 +2633,4 @@ input, select, textarea {
 				}
 
 	}
+
