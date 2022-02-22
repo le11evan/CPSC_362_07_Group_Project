@@ -11,6 +11,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/x-icon" href="/images/icons8-bathroom-64.png">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+		<style>
+
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -64,6 +69,26 @@
 								<h2 class="alt">The #1 Bathroom Review Website, <strong>Flushy</strong></a></h2>
 								<p>Leave reviews, find directions, and stay updated with various bathrooms across the world!</p>
 							</header>
+							
+							<div id="map"></div>
+							<script>
+								var map=L.map('map').setView([0,0],1);
+								L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=73G3DfyKZkKf9Tzah1qH', 
+								{attributes:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
+
+								googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    							maxZoom: 20,
+    							subdomains:['mt0','mt1','mt2','mt3']
+								});
+								googleStreets.addTo(map);
+
+								googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+								maxZoom: 20,
+								subdomains:['mt0','mt1','mt2','mt3']
+								});
+								googleSat.addto(map);
+							</script>
+	
 
 							<footer>
 								<a href="#portfolio" class="button scrolly">Open Bathroom Mapper</a>
@@ -194,6 +219,9 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/leaflet.js"></script>
+			
 
 	</body>
+	
 </html>
