@@ -7,6 +7,8 @@ to their location. They can also clcik onto a specific restroom and see pictures
 about these restroom qualities. The purpose of this website is to ensure people have access
 to convenient and sanitary bathrooms.
 
+Link to website: https://flushy.netlify.app/
+
 ## Members
 
 Evan Le - le11evan@csu.fullerton.edu
