@@ -20,7 +20,7 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
 
--- creat review table that store the actrul review  text base on the user and place 
+-- creat review table that store the actual review text base on the user and location 
 CREATE TABLE `REVIEW` (
 	`USERID` INT(225) UNSIGNED NULL DEFAULT NULL,
 	`PLACEID` INT(225) UNSIGNED NULL DEFAULT NULL,
