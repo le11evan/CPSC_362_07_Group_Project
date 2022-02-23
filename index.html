@@ -218,7 +218,19 @@
                 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js'
 
                 import { analytics } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js'
-                import { firestore } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
+				import { firestore } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
+
+                const firebaseConfig = {
+                    apiKey: "AIzaSyCw0xg3NVs6qoS6RYr64er6Em9MG-DTy7c",
+                    authDomain: "flushy-website.firebaseapp.com",
+                    projectId: "flushy-website",
+                    storageBucket: "flushy-website.appspot.com",
+                    messagingSenderId: "604068868575",
+                    appId: "1:604068868575:web:f9f66bce716a8a6970d46a",
+                    measurementId: "G-BQ3XH5KJBK"
+				};
+
+				const app = initializeApp(firebaseConfig);
 			</script>
 
 			<script src="assets/js/jquery.min.js"></script>
