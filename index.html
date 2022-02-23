@@ -245,6 +245,7 @@
 			const app = initializeApp(firebaseConfig);
 			const analysisData = getAnalytics(app)
 			const db = getFirestore(app);
+			/*
 
 			async function getImagesAlpha(db) {
 				const imageCol = collection(db, 'images-alpha');
@@ -265,6 +266,22 @@
                     console.error("Error adding document: ", error);
                 });
 			}
+			*/
+
+            import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
+
+            try {
+                const docRef = await addDoc(collection(db, "users"), {
+                    first: "Ada",
+                    last: "Lovelace",
+                    born: 1815
+                });
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+
+
 		</script>
 
 	</body>
