@@ -1,3 +1,4 @@
+--creat user table and give them unique ID number
 CREATE TABLE `FUSER` (
 	`ID` INT(255) UNSIGNED NOT NULL,
 	`Name` VARCHAR(500) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
@@ -7,6 +8,7 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
 
+--creat location table store the postion info and give them unique ID number
 CREATE TABLE `LOCATION` (
 	`PLACE` INT(255) UNSIGNED NOT NULL,
 	`XAXIS` INT(255) NULL DEFAULT NULL,
@@ -18,8 +20,7 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
 
-
-
+-- creat review table that store the actrul review  text base on the user and place 
 CREATE TABLE `REVIEW` (
 	`USERID` INT(225) UNSIGNED NULL DEFAULT NULL,
 	`PLACEID` INT(225) UNSIGNED NULL DEFAULT NULL,
