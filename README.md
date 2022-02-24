@@ -1,9 +1,13 @@
 # Flushy Website
 
+<p align="center">
+<img src="https://github.com/le11evan/Flushy_Website/blob/master/images/Flushy-Logo-3.png" width="250" height="250" />
+ </p>
+
 ## Description
 
 Welcome to our Flushy Website! This website allows users to find the nearest restrooms according
-to their location. They can also clcik onto a specific restroom and see pictures and read reviews
+to their location. They can also click onto a specific restroom and see pictures and read reviews
 about these restroom qualities. The purpose of this website is to ensure people have access
 to convenient and sanitary bathrooms.
 
