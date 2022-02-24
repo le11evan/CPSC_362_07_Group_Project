@@ -191,7 +191,7 @@
 								<textarea name="message" placeholder="Review"></textarea>
 							</div>
 							<div class="col-12">
-								<input type="submit" value="Post Review" />
+								<input type="button" name="submit" id="userURL" value="Post Image URL" onclick="addImageURL(userURL)"/>
 							</div>
 						</div>
 					</form>
@@ -258,7 +258,7 @@
             const imageCol = collection(db, "images-alpha")
             imageCol.addDoc({
                 link: "bruh 2"
-            })
+				})
                 .then((docRef) => {
                     console.log("Document written with ID: ", docRef.id);
                 })
@@ -268,19 +268,19 @@
 			}
 			*/
 
-            import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
+			async function addImageURL(s) {
 
-            try {
-                const docRef = await addDoc(collection(db, "users"), {
-                    first: "Ada",
-                    last: "Lovelace",
-                    born: 1815
-                });
-                console.log("Document written with ID: ", docRef.id);
-            } catch (e) {
-                console.error("Error adding document: ", e);
-            }
+				import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
 
+				try {
+				const docRef = await addDoc(collection(db, "images-alpha"), {
+						link: s
+					});
+					console.log("Document written with ID: ", docRef.id);
+				} catch (e) {
+					console.error("Error adding document: ", e);
+				}
+			}
 
 		</script>
 
