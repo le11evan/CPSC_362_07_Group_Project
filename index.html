@@ -203,6 +203,10 @@
 										<!-- Storage -->
 										<p> </p>
 										<div class="col-6 col-12-mobile">
+											<input type="file" Value="Upload File" placeholder="Image link" />
+                                            <p id="output"> </p>
+										</div>
+										<div class="col-6 col-12-mobile">
 											<input type="button" name="Storage Test" value="Storage Test" id="storageTestButton" />
 										</div>
 									</form>
@@ -293,18 +297,20 @@
 			const app = initializeApp(firebaseConfig);
 			const analysisData = getAnalytics(app)
 			const db = getFirestore(app);
-			const storage = getStorage(app);
 
-			/*
-			async function getImagesAlpha(db) {
-				const imageCol = collection(db, 'images-alpha');
-				const imageSnapshot = await getDocs(imageCol);
-				const imageList = imageSnapshot.docs.map(doc => doc.data());
-				return imageList;
-			}
-			*/
+			const storage = getStorage(app);
+			const output = document.querySelector("fileOutput");
 
 			/* ========== Google Firestore Implementation ========== */
+
+            /*
+			async function getImagesAlpha(db) {
+			const imageCol = collection(db, 'images-alpha');
+			const imageSnapshot = await getDocs(imageCol);
+			const imageList = imageSnapshot.docs.map(doc => doc.data());
+			return imageList;
+			}
+			*/
 
 			// --Loading Dynamic Images--
 			var dImg = document.createElement('img');
@@ -361,16 +367,19 @@
 			}
 
 			/* ========== End Firestore Implementation ========== */
-			async function addImage() {
-				const storageRef = ref(storage, 'images/avatar.jpg');
-				const metadata = { contentType: 'image/jpeg' };
-
-                const uploadTask = uploadBytesResumable(storage, 'images/avatar.jpg', metadata);
-			}
-
 
 
 			/* ========== Google Storage Implementation ========== */
+
+			async function addImage() {
+
+				/*
+                const storageRef = ref(storage, 'images/avatar.jpg');
+                const metadata = { contentType: 'image/jpeg' };
+
+                const uploadTask = uploadBytesResumable(storage, 'images/avatar.jpg', metadata);
+				*/
+			}
 
 
 			/* ========== End Google Storage ========== */
