@@ -100,9 +100,19 @@
        								var long = position.coords.longitude;  
 								var map=L.map('map').setView([lat,long],13);
 								var marker = L.marker([lat, long]).addTo(map); // current position
+							
+								/* 
+									pseudocode
+									Pull the data from the database location ID, latitude, longitude base on current location
+									PHP or firebase									
+									for(all latitude, longitude)
+									var marker = L.marker([lat, long]).addTo(map);
+								
+								*/	
+									
 								L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=73G3DfyKZkKf9Tzah1qH', 
 								{attributes:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
-
+								
 								googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
     									maxZoom: 20,
     									subdomains:['mt0','mt1','mt2','mt3']
