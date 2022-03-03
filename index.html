@@ -176,7 +176,11 @@
 							<!-- Image Testing -->
 
 							<div class="row">
+                                <div class="col-4 col-12-mobile">
+
+								</div>
 								<div class="col-4 col-12-mobile">
+									<p> </p>
 									<article class="item">
 										<a href="#" id="defaultImage" class="image fit"><img src="" alt="" /></a>
 										<a href="#" id="userImage1" class="image fit"><img src="" alt="" /></a>
@@ -195,10 +199,15 @@
 										<div class="col-6 col-12-mobile">
 											<input type="button" name="refresh" value="Refresh Images" id="freshButton" />
 										</div>
+
+										<!-- Storage -->
+										<p> </p>
+										<div class="col-6 col-12-mobile">
+											<input type="button" name="Storage Test" value="Storage Test" id="storageTestButton" />
+										</div>
 									</form>
 								</div>
 							</div>
-
 							<!--End Image Testing-->
 
 						</div>
@@ -268,8 +277,8 @@
 		<script type="module">
 			import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js'
 			import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
-			import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
-            import { collection, addDoc, doc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"; 
+            import { getFirestore, collection, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
+            import { getStorage, ref, uploadBytesResumable} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
 
 			const firebaseConfig = {
 				apiKey: "AIzaSyCw0xg3NVs6qoS6RYr64er6Em9MG-DTy7c",
@@ -284,28 +293,18 @@
 			const app = initializeApp(firebaseConfig);
 			const analysisData = getAnalytics(app)
 			const db = getFirestore(app);
-			/*
+			const storage = getStorage(app);
 
+			/*
 			async function getImagesAlpha(db) {
 				const imageCol = collection(db, 'images-alpha');
 				const imageSnapshot = await getDocs(imageCol);
 				const imageList = imageSnapshot.docs.map(doc => doc.data());
 				return imageList;
 			}
-
-			async function addImageAlpha(db) {
-            const imageCol = collection(db, "images-alpha")
-            imageCol.addDoc({
-                link: "bruh 2"
-				})
-                .then((docRef) => {
-                    console.log("Document written with ID: ", docRef.id);
-                })
-                .catch((error) => {
-                    console.error("Error adding document: ", error);
-                });
-			}
 			*/
+
+			/* ========== Google Firestore Implementation ========== */
 
 			// --Loading Dynamic Images--
 			var dImg = document.createElement('img');
@@ -316,6 +315,9 @@
 
 			document.getElementById("submitButton").addEventListener("click", getForm);
 			document.getElementById("freshButton").addEventListener("click", refreshImages);
+
+			// Storage
+			document.getElementById("storageTestButton").addEventListener("click", addImage);
 
 			function bruh() {
 				console.log("Bruh.");
@@ -356,7 +358,22 @@
                 } catch (e) {
                     console.error("Error adding document: ", e);
                 }
-            }
+			}
+
+			/* ========== End Firestore Implementation ========== */
+			async function addImage() {
+				const storageRef = ref(storage, 'images/avatar.jpg');
+				const metadata = { contentType: 'image/jpeg' };
+
+                const uploadTask = uploadBytesResumable(storage, 'images/avatar.jpg', metadata);
+			}
+
+
+
+			/* ========== Google Storage Implementation ========== */
+
+
+			/* ========== End Google Storage ========== */
 
 		</script>
 
