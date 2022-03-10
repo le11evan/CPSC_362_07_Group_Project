@@ -102,11 +102,15 @@
 								var marker = L.marker([lat, long]).addTo(map); // current position
 							
 								/* 
-									pseudocode
-									Pull the data from the database location ID, latitude, longitude base on current location
-									PHP or firebase									
-									for(all latitude, longitude)
-									var marker = L.marker([lat, long]).addTo(map);
+									
+									// Create a query against the collection.
+									const lat1 = query(loc, where("latitude", ">=", "lat-5"));
+									const lat2 = query(lat1, where("latitude", "<=", "lat+5"));
+									const long1 = query(lat2, where("longitude", ">=", "lat-5"));
+									const nearbathroom = query(long1, where("longitude", "<=", "lat+5")); /*This should be the set for all nearby palce we want*/
+									
+								//pseudocode //add maker for all nearbybathroom
+								//var marker = L.marker([lat, long]).addTo(map);
 								
 								*/	
 									
