@@ -198,6 +198,8 @@
 											<h3>Latest User Image</h3>
 										</header>
 									</article>
+
+									<!-- IMAGE URLs -->
 									<form action="#" method="post" id="alphaURL">
 										<article class="item">
 											<a href="#" class="image fit"><img src="" alt="" /></a>
@@ -209,15 +211,21 @@
 										<div class="col-6 col-12-mobile">
 											<input type="button" name="refresh" value="Refresh Images" id="freshButton" />
 										</div>
+									</form>
 
+									<!-- IMAGE FILEs -->
+									<form method="post" id="alphaImage" enctype="multipart/form-data">
 										<!-- Storage -->
 										<p> </p>
 										<div class="col-6 col-12-mobile">
-											<input type="file" Value="Upload File" placeholder="Image link" />
+											<input type="file" id="cloudImage" name="cloudImage" accept=".jpg, .jpeg, .png, .txt" />
                                             <p id="output"> </p>
 										</div>
 										<div class="col-6 col-12-mobile">
-											<input type="button" name="Storage Test" value="Storage Test" id="storageTestButton" />
+											<input type="submit" name="Storage Test" value="Storage Test" id="storageTestButton" />
+										</div>
+										<div class="col-4 col-12-mobile" id="cloudImgPreview">
+											<p> No files currently selected for upload </p>
 										</div>
 									</form>
 								</div>
@@ -335,6 +343,9 @@
 			// Storage
 			document.getElementById("storageTestButton").addEventListener("click", addImage);
 
+			const cloudImage = document.getElementById("cloudImage");
+			cloudImage.addEventListener("change", updateImageSelector);
+
 			function bruh() {
 				console.log("Bruh.");
 			}
@@ -381,14 +392,92 @@
 
 			/* ========== Google Storage Implementation ========== */
 
-			async function addImage() {
+			async function updateImageSelector() {
+				const preview = document.getElementById("cloudImgPreview");
 
-				/*
-                const storageRef = ref(storage, 'images/avatar.jpg');
+				while (preview.firstChild) {
+					preview.removeChild(preview.firstChild);
+				}
+
+				const curFiles = cloudImage.files;
+				if (curFiles.length === 0) {
+					const para = document.createElement('p');
+					para.textContent = 'No files currently selected for upload';
+					preview.appendChild(para);
+				} else {
+					const list = document.createElement('ol');
+					preview.appendChild(list);
+
+					for (const file of curFiles) {
+						const listItem = document.createElement('li');
+						const para = document.createElement('p');
+
+                        para.textContent = `File name ${file.name}, file size ${file.size}.`;
+                        const image = document.createElement('img');
+                        image.src = URL.createObjectURL(file);
+
+                        listItem.appendChild(image);
+						listItem.appendChild(para);
+
+						list.appendChild(listItem);
+
+                        //await addImage(file);
+					}
+				}
+            }
+
+			async function addImage(uplImg) {
+
+                const storageRef = ref(storage, 'images/' + uplImg.name);
                 const metadata = { contentType: 'image/jpeg' };
 
-                const uploadTask = uploadBytesResumable(storage, 'images/avatar.jpg', metadata);
-				*/
+				console.log(uplImg.name);
+
+				const uploadTask = uploadBytesResumable(storage, uplImg, metadata);
+
+                uploadTask.on('state_changed',
+                    (snapshot) => {
+                        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        console.log('Upload is ' + progress + '% done');
+                        switch (snapshot.state) {
+                            case 'paused':
+                                console.log('Upload is paused');
+                                break;
+                            case 'running':
+                                console.log('Upload is running');
+                                break;
+                        }
+                    },
+                    (error) => {
+                        // A full list of error codes is available at
+                        // https://firebase.google.com/docs/storage/web/handle-errors
+                        switch (error.code) {
+                            case 'storage/unauthorized':
+                                // User doesn't have permission to access the object
+                                break;
+                            case 'storage/canceled':
+                                // User canceled the upload
+                                break;
+
+                            // ...
+
+                            case 'storage/unknown':
+                                // Unknown error occurred, inspect error.serverResponse
+                                break;
+                        }
+                    },
+                    () => {
+                        // Upload completed successfully, now we can get the download URL
+
+						/*
+                        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                            console.log('File available at', downloadURL);
+                        });
+						*/
+						console.log('File Available.')
+                    }
+                );
 			}
 
 
