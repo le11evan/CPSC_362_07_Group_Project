@@ -2084,10 +2084,10 @@ button,
 }
 
 .login {
-  background-color: rgb(0, 255, 128);
+  background-color: rgb(0, 153, 255);
 }
 .create-acc {
-  background-color: rgb(243, 105, 50);
+  background-color: rgb(14, 42, 83);
 }
 
 input[type="button"]:hover,
@@ -2383,7 +2383,7 @@ button:active,
 
 #main > section.one {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 02)),
-    url("../../images/Bathroom-Background.jpg");
+    url("../../images/bathroom-background.png");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
