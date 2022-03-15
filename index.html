@@ -88,7 +88,7 @@
 								<h2>Nearby Bathrooms</h2>
 							</header>
 
-							<p>Could show nearby bathrooms, or pictures of the chosen bathroom.</p>
+							<p>For now, Click "Create a review here", and input bathroom info, reviews, pictures on "Reviews" Page</p>
 							<div id="map"></div>
 							<script>
 								navigator.geolocation.getCurrentPosition(successCallback);  
@@ -116,7 +116,7 @@
 								};
 
 								var marker = L.marker([lat, long], {icon: flushyIcon}).addTo(map)
-								.bindPopup('You Are Here.')
+								.bindPopup('You Are Here. <nav id="nav"><ul><a href="#about" id="about-link">Create a review here.</span></a></ul></nav>')
     							.openPopup();; // current position
 							
 								/* 
@@ -133,7 +133,6 @@
 									
 								L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=73G3DfyKZkKf9Tzah1qH', 
 								{attributes:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
-
 
 								
 								googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
