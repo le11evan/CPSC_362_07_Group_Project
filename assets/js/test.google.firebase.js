@@ -4,7 +4,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-
 import { getFirestore, collection, query, where, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
 import { getStorage, ref, uploadBytes, uploadBytesResumable} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
 import { showmap } from './map.js'
-import { addReview, findReview } from './Review.js'
+//import { addReview, findReview } from './Review.js'
 
 console.log("Website Loaded Succesfully");
 
