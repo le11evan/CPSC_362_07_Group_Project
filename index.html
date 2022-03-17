@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
 		<!-- Google Sign Ins-->
-		<meta name="google-signin-client_id" content="362540086629-i083gqmdcvlaa5inqn4q6g69sikh0ue3.apps.googleusercontent.com">
+		<meta name="google-signin-client_id" content="362540086629-l0rq31flp4qauafgq1o29invbkrggvqr.apps.googleusercontent.com">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 		<!-- CSS Includes-->
@@ -82,7 +82,8 @@
 								<a href="#portfolio" class="button scrolly">Open Bathroom Mapper</a>
 							</div>
 							<footer class="signin-buttons">
-								<div class="g-signin2"></div>
+								<div class="g-signin2" data-onsuccess="onSignIn"></div>
+								<div id="content"></div>
 							</footer>
 
 
@@ -490,7 +491,14 @@
 
 			/* ==========  end  map ========================*/
 
+			/* =============== GOOGLE SIGN IN CONTENT ================== */
+			function onSignIn(googleUser) {
+				console.log("User is " + JSON.stringify(googleUser.getBasicProfile));
+			}
+			
+			document.querySelector("#content").innerText = googleUser.getBasicProfile().getName();
 
+			
 		</script>
 
 		
