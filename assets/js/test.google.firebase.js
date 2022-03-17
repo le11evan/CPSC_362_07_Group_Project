@@ -148,6 +148,7 @@ async function updateImageSelector() {
             });
 
             //TODO: Put following lines into its own function, add more detailed firestore data
+            storageRef = ref(storage, 'images/' + file.name);
             getDownloadURL(storageRef).then((url) => {
                 addImageURL(url); //Firestore call
                 document.getElementById('defaultImage').removeChild(dImg);
