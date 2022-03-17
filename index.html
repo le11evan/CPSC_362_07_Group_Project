@@ -99,7 +99,8 @@
 							</header>
 
 							<p>For now, Click "Create a review here", and input bathroom info, reviews, pictures on "Reviews" Page</p>
-							<div id="map"></div>
+							<div id="map">
+							</div>
 
 
 						</div>
@@ -275,6 +276,7 @@
 			import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
             import { getFirestore, collection, query, where, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
             import { getStorage, ref, uploadBytes, uploadBytesResumable} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
+			import { showmap } from './assets/js/map.js'
 
 			console.log("Website Loaded Succesfully");
 
@@ -294,6 +296,14 @@
 
 			const storage = getStorage();
 			const output = document.querySelector("fileOutput");
+
+
+
+			/*========== map function========================*/
+			
+			showmap(db);
+			
+			/* ==========  end  map ========================*/
 
 			/* ========== Google Firestore Implementation ========== */
 
@@ -417,6 +427,7 @@
 			/* ========== End Google Storage ========== */
 			
 
+<<<<<<< HEAD
 			/* ========== map ========================*/
 			// navigator.geolocation.getCurrentPosition(successCallback);  
 	
@@ -492,6 +503,8 @@
 
 			/* ==========  end  map ========================*/
 
+=======
+>>>>>>> 1de3436b42711e9b1ec500e291e5fe94b2b8f98f
 			/* =============== GOOGLE SIGN IN CONTENT ================== */
 			var test = document.getElementById('signOut');
 			test.onclick = function() {
