@@ -143,12 +143,11 @@ async function updateImageSelector() {
 
             console.log(file.name);
 
-            uploadBytes(storageRef, file, metadata).then((snapshot) => {
+            await uploadBytes(storageRef, file, metadata).then((snapshot) => {
                 console.log('Uploaded an image file!');
             });
 
             //TODO: Put following lines into its own function, add more detailed firestore data
-            storageRef = ref(storage, 'images/' + file.name);
             getDownloadURL(storageRef).then((url) => {
                 addImageURL(url); //Firestore call
                 document.getElementById('defaultImage').removeChild(dImg);
