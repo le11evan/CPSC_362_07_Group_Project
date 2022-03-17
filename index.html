@@ -9,18 +9,28 @@
 		<title>Flushy</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!-- Google Sign Ins-->
+		<meta name="google-signin-client_id" content="362540086629-i083gqmdcvlaa5inqn4q6g69sikh0ue3.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+		<!-- CSS Includes-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
 		<link rel="icon" type="image/x-icon" href="/images/Flushy-Logo-Favicon.png">
+
+		
+		<!-- Leaflet includes -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 		<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 		<style>
 
 		</style>
 	</head>
 	<body class="is-preload">
-
+		
 		<!-- Header -->
 			<div id="header">
 
@@ -71,9 +81,8 @@
 							<div>
 								<a href="#portfolio" class="button scrolly">Open Bathroom Mapper</a>
 							</div>
-							<footer>
-								<button class="button login">Login</button>
-								<button class="button create-acc">Create New Account</button>
+							<footer class="signin-buttons">
+								<div class="g-signin2"></div>
 							</footer>
 
 
