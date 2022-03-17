@@ -2,7 +2,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js'
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
 import { getFirestore, collection, query, where, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
-import { getStorage, ref, uploadBytes, uploadBytesResumable} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
+import { getStorage, ref, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
 import { showmap } from './map.js'
 //import { addReview, findReview } from './Review.js'
 
@@ -144,8 +144,18 @@ async function updateImageSelector() {
             console.log(file.name);
 
             uploadBytes(storageRef, file, metadata).then((snapshot) => {
-                console.log('Uploaded a blob or file!');
+                console.log('Uploaded an image file!');
             });
+
+            //TODO: Put following lines into its own function, add more detailed firestore data
+            getDownloadURL(storageRef).then((url) => {
+                addImageURL(url); //Firestore call
+                document.getElementById('defaultImage').removeChild(dImg);
+                dImg.src = url;
+                document.getElementById('defaultImage').appendChild(dImg);
+            });
+
+
         }
 
         details.textContent = 'File Uploaded!'
