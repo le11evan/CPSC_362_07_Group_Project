@@ -83,9 +83,9 @@
 							</div>
 							<footer class="signin-buttons">
 								<div class="g-signin2" data-onsuccess="onSignIn"></div>
-								<div id="content"></div>
+								<button id="signOut" style="background-color: orange;">Sign Out</button>
 							</footer>
-
+							<div id="content">efsef</div>
 
 						</div>
 					</section>
@@ -265,7 +265,6 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script src="assets/js/leaflet.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
@@ -276,6 +275,8 @@
 			import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
             import { getFirestore, collection, query, where, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
             import { getStorage, ref, uploadBytes, uploadBytesResumable} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
+
+			console.log("Website Loaded Succesfully");
 
 			const firebaseConfig = {
 				apiKey: "AIzaSyCw0xg3NVs6qoS6RYr64er6Em9MG-DTy7c",
@@ -316,7 +317,7 @@
 			document.getElementById("freshButton").addEventListener("click", refreshImages);
 
 			// Storage
-			document.getElementById("storageTestButton").addEventListener("click", addImage);
+			// document.getElementById("storageTestButton").addEventListener("click", addImage);
 
 			const cloudImage = document.getElementById("cloudImage");
 			cloudImage.addEventListener("change", updateImageSelector);
@@ -417,94 +418,106 @@
 			
 
 			/* ========== map ========================*/
-			navigator.geolocation.getCurrentPosition(successCallback);  
+			// navigator.geolocation.getCurrentPosition(successCallback);  
 	
-			function successCallback(position){  
-				var lat = position.coords.latitude;  
-				var long = position.coords.longitude;  
-					lat = 33.883319144135996;
-					long =-117.88519218058632;
+			// function successCallback(position){  
+			// 	var lat = position.coords.latitude;  
+			// 	var long = position.coords.longitude;  
+			// 		lat = 33.883319144135996;
+			// 		long =-117.88519218058632;
 
-				var map=L.map('map').setView([lat,long],15);
+			// 	var map=L.map('map').setView([lat,long],15);
 
-				var LeafIcon = L.Icon.extend({
-				options: {
-					shadowUrl: 'images/Flushy-Marker-Shadow.png',
-					iconSize:     [48, 50],
-					shadowSize:   [45, 60],
-					iconAnchor:   [22, 94],
-					shadowAnchor: [23, 100],
-					popupAnchor:  [-10, -85]
-				}
-				});
+			// 	var LeafIcon = L.Icon.extend({
+			// 	options: {
+			// 		shadowUrl: 'images/Flushy-Marker-Shadow.png',
+			// 		iconSize:     [48, 50],
+			// 		shadowSize:   [45, 60],
+			// 		iconAnchor:   [22, 94],
+			// 		shadowAnchor: [23, 100],
+			// 		popupAnchor:  [-10, -85]
+			// 	}
+			// 	});
 
-				var flushyIcon = new LeafIcon({iconUrl: 'images/Flushy-Marker.png'});
+			// 	var flushyIcon = new LeafIcon({iconUrl: 'images/Flushy-Marker.png'});
 
-				L.icon = function (options) {
-				return new L.Icon(options);
-				};
+			// 	L.icon = function (options) {
+			// 	return new L.Icon(options);
+			// 	};
 
-				var marker = L.marker([lat, long], {icon: flushyIcon}).addTo(map)
-				.bindPopup('You Are Here. <nav id="nav"><ul><a href="#about" id="about-link">Create a review here.</span></a></ul></nav>')
-				.openPopup();; // current position
+			// 	var marker = L.marker([lat, long], {icon: flushyIcon}).addTo(map)
+			// 	.bindPopup('You Are Here. <nav id="nav"><ul><a href="#about" id="about-link">Create a review here.</span></a></ul></nav>')
+			// 	.openPopup();; // current position
 					
-				//pseudocode //add maker for all nearbybathroom
-				var nearbathroom = naerby(lat,long, map);
+			// 	//pseudocode //add maker for all nearbybathroom
+			// 	var nearbathroom = naerby(lat,long, map);
 					
-				L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=73G3DfyKZkKf9Tzah1qH', 
-				{attributes:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
+			// 	L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=73G3DfyKZkKf9Tzah1qH', 
+			// 	{attributes:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
 
 				
-				window.googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-						maxZoom: 20,
-						subdomains:['mt0','mt1','mt2','mt3']
-				});
-				window.googleStreets.addTo(map);
+			// 	window.googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+			// 			maxZoom: 20,
+			// 			subdomains:['mt0','mt1','mt2','mt3']
+			// 	});
+			// 	window.googleStreets.addTo(map);
 
-				window.googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-				maxZoom: 20,
-				subdomains:['mt0','mt1','mt2','mt3']
-				});
-				//window.googleSat.addTo(map); if you want use googleSat
-			}
-
-
+			// 	window.googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+			// 	maxZoom: 20,
+			// 	subdomains:['mt0','mt1','mt2','mt3']
+			// 	});
+			// 	//window.googleSat.addTo(map); if you want use googleSat
+			// }
 
 
-			async function naerby(lat, long, map){
-				const q = query(collection(db, "location"), where("latitude", ">=", lat-0.02),where("latitude", "<=", lat+0.02));
-				const querySnapshot = await getDocs(q);
-			  	querySnapshot.forEach((doc) => {
 
-				let lat1 = doc.data().latitude;
-				let long1 = doc.data().longitude;
-				if(long1 >= (long-0.02) && long1 <= (long+0.02)){
-					var marker = L.marker([lat1, long1]).addTo(map);   // nearby marker
-					//console.log(lat1); 
-					//console.log(long1);
-					//console.log(doc.id, " => ", doc.data());	
-				}
+
+			// async function naerby(lat, long, map){
+			// 	const q = query(collection(db, "location"), where("latitude", ">=", lat-0.02),where("latitude", "<=", lat+0.02));
+			// 	const querySnapshot = await getDocs(q);
+			//   	querySnapshot.forEach((doc) => {
+
+			// 	let lat1 = doc.data().latitude;
+			// 	let long1 = doc.data().longitude;
+			// 	if(long1 >= (long-0.02) && long1 <= (long+0.02)){
+			// 		var marker = L.marker([lat1, long1]).addTo(map);   // nearby marker
+			// 		//console.log(lat1); 
+			// 		//console.log(long1);
+			// 		//console.log(doc.id, " => ", doc.data());	
+			// 	}
 				
-				});
-			}
+			// 	});
+			// }
 
 
 			/* ==========  end  map ========================*/
 
 			/* =============== GOOGLE SIGN IN CONTENT ================== */
-			function onSignIn(googleUser) {
-				console.log("User is " + JSON.stringify(googleUser.getBasicProfile));
+			var test = document.getElementById('signOut');
+			test.onclick = function() {
+				gapi.auth2.getAuthInstance().signOut().then(function() {
+					console.log('user signed out');
+				});
 			}
+
+			function onSignIn(googleUser) {
+				var profile = googleUser.getBasicProfile();
+				console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+				console.log('Name: ' + profile.getName());
+				console.log('Image URL: ' + profile.getImageUrl());
+				console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			}
+
+			// function onSignIn(googleUser) {
+			// 	console.log("User is " + JSON.stringify(googleUser.getBasicProfile()));
+			// 	document.querySelector("#content").innerText = googleUser.getBasicProfile().getGivenName();
+
+			// }
+
 			
-			document.querySelector("#content").innerText = googleUser.getBasicProfile().getName();
 
 			
 		</script>
-
-		
-
-
-
 	</body>
 	
 </html>
