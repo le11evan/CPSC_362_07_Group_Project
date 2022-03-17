@@ -57,7 +57,7 @@ document.getElementById("submitButton").addEventListener("click", getForm);
 document.getElementById("freshButton").addEventListener("click", refreshImages);
 
 // Storage
-document.getElementById("storageTestButton").addEventListener("click", addImage);
+//document.getElementById("storageTestButton").addEventListener("click", addImage);
 
 const cloudImage = document.getElementById("cloudImage");
 cloudImage.addEventListener("change", updateImageSelector);
