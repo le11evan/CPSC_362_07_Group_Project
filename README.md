@@ -22,3 +22,14 @@ Isaiah George - isaiahcabugos@csu.fullerton.edu
 Guang Chen - kp82611@csu.fullerton.edu
 
 Justin Bui - Justin_Bui12@csu.fullerton.edu
+
+## How to Run it Locally
+
+To run it locally, assuming you have Python 3 or above, type this into
+your terminal:
+
+```
+python3 -m http.server
+```
+
+Then on your browser, search up localhost:8000

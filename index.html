@@ -83,6 +83,7 @@
 							</div>
 							<footer class="signin-buttons">
 								<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 								<button id="signOut" style="background-color: orange;">Sign Out</button>
 							</footer>
 							<div id="content"></div>
@@ -269,6 +270,7 @@
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
+<<<<<<< HEAD
 		<!-- Google Firebase (Images) (Placeholder) -->
 
 		<script type="module">
@@ -279,6 +281,25 @@
 			import { showmap } from './assets/js/map.js'
 
 			console.log("Website Loaded Succesfully");
+			/* ============================== GOOGLE SIGN IN CONTENT ========================================== */
+			var test = document.getElementById('signOut');
+			test.onclick = function() {
+				gapi.auth2.getAuthInstance().signOut().then(function() {
+					console.log('user signed out');
+				});
+			}
+
+			function onSignIn(googleUser) {
+				console.log("I am clicked");
+				var profile = googleUser.getBasicProfile();
+				console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+				console.log('Name: ' + profile.getName());
+				console.log('Image URL: ' + profile.getImageUrl());
+				console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			}
+
+
+			/* ========================================================================================== */
 
 			const firebaseConfig = {
 				apiKey: "AIzaSyCw0xg3NVs6qoS6RYr64er6Em9MG-DTy7c",
@@ -427,32 +448,12 @@
 			/* ========== End Google Storage ========== */
 			
 
-			/* =============== GOOGLE SIGN IN CONTENT ================== */
-			var test = document.getElementById('signOut');
-			test.onclick = function() {
-				gapi.auth2.getAuthInstance().signOut().then(function() {
-					console.log('user signed out');
-				});
-			}
-
-			function onSignIn(googleUser) {
-				var profile = googleUser.getBasicProfile();
-				console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-				console.log('Name: ' + profile.getName());
-				console.log('Image URL: ' + profile.getImageUrl());
-				console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-			}
-
-			// function onSignIn(googleUser) {
-			// 	console.log("User is " + JSON.stringify(googleUser.getBasicProfile()));
-			// 	document.querySelector("#content").innerText = googleUser.getBasicProfile().getGivenName();
-
-			// }
-
 			
+=======
+		<!-- Google Firebase-->
+>>>>>>> 0f3bc56279fa1319720a02799388f80ac0a5b825
 
-			
-		</script>
+		<script  type="module" src="assets/js/test.google.firebase.js"> </script>
 	</body>
 	
 </html>
