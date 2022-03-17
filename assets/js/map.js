@@ -1,7 +1,7 @@
 import { collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
 
 export function showmap(db){
-
+    var ID = [];
     navigator.geolocation.getCurrentPosition(successCallback);  
 	
     function successCallback(position){  
@@ -16,10 +16,10 @@ export function showmap(db){
         options: {
             shadowUrl: 'images/Flushy-Marker-Shadow.png',
             iconSize:     [48, 50],
-            shadowSize:   [45, 60],
-            iconAnchor:   [22, 94],
-            shadowAnchor: [23, 100],
-            popupAnchor:  [-10, -85]
+            shadowSize:   [47, 50],
+            iconAnchor:   [22, 40],
+            shadowAnchor: [22, 40],
+            popupAnchor:  [0, -40]
         }
         });
 
@@ -58,13 +58,14 @@ export function showmap(db){
         const querySnapshot = await getDocs(q);
           querySnapshot.forEach((doc) => {
 
-        let lat1 = doc.data().latitude;
-        let long1 = doc.data().longitude;
-        if(long1 >= (long-0.02) && long1 <= (long+0.02)){
-            var marker = L.marker([lat1, long1]).addTo(map);   // nearby marker
-            //console.log(lat1); 
-            //console.log(long1);
-            //console.log(doc.id, " => ", doc.data());	
+            let lat1 = doc.data().latitude;
+            let long1 = doc.data().longitude;
+            if(long1 >= (long-0.02) && long1 <= (long+0.02)){
+                var marker = L.marker([lat1, long1]).addTo(map);   // nearby marker
+                ID.push(doc.id);
+                //console.log(lat1); 
+                //console.log(long1);
+                //console.log(doc.id, " => ", doc.data());	
         }
         
         });
@@ -74,19 +75,5 @@ export function showmap(db){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return ID;
 }
