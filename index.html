@@ -100,8 +100,6 @@
 
 							<p>For now, Click "Create a review here", and input bathroom info, reviews, pictures on "Reviews" Page</p>
 							<div id="map">
-								<script src="/assets/js/map.js"> </script>
-
 							</div>
 
 
@@ -279,6 +277,7 @@
 			import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
             import { getFirestore, collection, query, where, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
             import { getStorage, ref, uploadBytes, uploadBytesResumable} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
+			import { showmap } from './assets/js/map.js'
 
 			const firebaseConfig = {
 				apiKey: "AIzaSyCw0xg3NVs6qoS6RYr64er6Em9MG-DTy7c",
@@ -300,24 +299,8 @@
 
 
 			/*========== map function========================*/
-			window.naerby = naerby;
 			
-			async function naerby(lat, long, map){
-				const q = query(collection(db, "location"), where("latitude", ">=", lat-0.02),where("latitude", "<=", lat+0.02));
-				const querySnapshot = await getDocs(q);
-			  	querySnapshot.forEach((doc) => {
-
-				let lat1 = doc.data().latitude;
-				let long1 = doc.data().longitude;
-				if(long1 >= (long-0.02) && long1 <= (long+0.02)){
-					var marker = L.marker([lat1, long1]).addTo(map);   // nearby marker
-					//console.log(lat1); 
-					//console.log(long1);
-					//console.log(doc.id, " => ", doc.data());	
-				}
-				
-				});
-			}
+			showmap(db);
 			
 			/* ==========  end  map ========================*/
 
