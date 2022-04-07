@@ -191,10 +191,7 @@
 									<form method="post" id="alphaImage" enctype="multipart/form-data">
 										<!-- Storage -->
 										<p> </p>
-										<div class="col-6 col-12-mobile">
-											<input type="file" id="cloudImage" name="cloudImage" accept=".jpg, .jpeg, .png, .txt" />
-                                            <p id="output"> </p>
-										</div>
+										<!-- Moved to Contact Section -->
 										<div class="col-6 col-12-mobile">
 											<input type="button" name="Storage Test" value="Storage Test" id="storageTestButton" />
 										</div>
@@ -225,12 +222,34 @@
 
 					<form method="post" action="#" id="userURL">
 						<div class="row">
-							<!--
-							<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="User" /></div>
-							<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Rating" /></div>
-							-->
+
+							<div class="col-6 col-12-mobile">	<h1>Review Title</h1><input type="text" name="title" placeholder="Title" /></div>
+							<div class="col-6 col-12-mobile">
+								<h1>Review Rating</h1>
+                            </div>
+							<div class="col-6 col-12-mobile"></div>
+							<label>
+								<input type="radio" id="5Star" name="rating" value="5" />5 Stars
+							</label>
+							<label>
+								<input type="radio" id="4Star" name="rating" value="4" />4 Stars
+							</label>
+							<label>
+								<input type="radio" id="3Star" name="rating" value="3" />3 Stars
+							</label>
+							<label>
+								<input type="radio" id="2Star" name="rating" value="2" />2 Stars
+							</label>
+							<label>
+								<input type="radio" id="1Star" name="rating" value="1" />1 Stars
+							</label>
+							
 							<div class="col-12">
-								<textarea name="url" placeholder="URL"></textarea>
+								<textarea name="Review Text" placeholder="Review Details"></textarea>
+							</div>
+							<div class="col-12">
+								<input type="file" id="cloudImage" name="cloudImage" accept=".jpg, .jpeg, .png" />
+								<p id="output"> </p>
 							</div>
 							<div class="col-12">
 								<input type="button" name="submit" value="Post Image URL" id="submitButton" />
