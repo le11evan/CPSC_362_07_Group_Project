@@ -3,7 +3,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
 import { getFirestore, collection, query, where, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
 import { getStorage, ref, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
-import { showmap } from './map.js'
+//import { showmap } from './map.js'
 import { currentlocation } from './currentlocation.js';
 import { addReview, findReview } from './Review.js'
 
