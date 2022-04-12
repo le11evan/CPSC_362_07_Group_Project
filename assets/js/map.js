@@ -1,14 +1,7 @@
 import { collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
 
-export function showmap(db){
+export function showmap(db,lat, long){
     var ID = [];
-    navigator.geolocation.getCurrentPosition(successCallback);  
-	
-    function successCallback(position){  
-        var lat = position.coords.latitude;  
-        var long = position.coords.longitude;  
-            lat = 33.883319144135996;  //set location to CSUF for track
-            long =-117.88519218058632;
 
         var map=L.map('map').setView([lat,long],15);
 
@@ -69,9 +62,6 @@ export function showmap(db){
         }
         
         });
-
-    }
-
 
 
 

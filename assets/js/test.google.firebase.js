@@ -4,6 +4,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-
 import { getFirestore, collection, query, where, addDoc, doc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js'
 import { getStorage, ref, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js" 
 import { showmap } from './map.js'
+import { currentlocation } from './currentlocation.js';
 import { addReview, findReview } from './Review.js'
 
 console.log("Website Loaded Succesfully");
@@ -29,11 +30,51 @@ const output = document.querySelector("fileOutput");
 
 
 /*========== map function========================*/
-var locationID = [];
-locationID = showmap(db); // an array set of nearby location ID 
-console.log(locationID);
+
+//need location that able to add to review
+const nowlocation = currentlocation();
+
+
+//now using map2
+//locationID = showmap(db,nowlocation[0],nowlocation[1]); // an array set of nearby location ID 
+//console.log(locationID);
 
 /* ==========  end  map ========================*/
+
+
+/* =========    add review   ==========*/
+document.getElementById("submitButton").addEventListener("click", reviewfunction);
+
+function reviewfunction(){
+
+
+    // getElement from html need title, rate, review
+
+    //var title = "" //defult
+    //var title = document.getElementsById("title").value;
+    var title = "title should be here"
+    
+    //var rate = 0 //defult
+    //var rate = document.getElementsById("rate").value;
+    var rate = 5
+
+    //var commentt = "" //defult
+    //var comment = document.getElementsById("review").value;
+    var review = "test for review part"
+    var comment = review
+
+    //current or
+    var lat  = nowlocation[0] 
+    var long = nowlocation[1]
+
+
+    addReview(lat, long, title, comment, rate, db);
+
+    console.log("review added");
+}
+
+
+
 
 /* ========== Google Firestore Implementation ========== */
 

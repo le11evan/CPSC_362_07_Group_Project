@@ -6,7 +6,7 @@ import { collection, query, where, getDocs, addDoc} from 'https://www.gstatic.co
 //location: which is latitude and longitude => number
 //Review text  =>string
 //database from firestore=>Db
-export async function addReview(lat, long, review, db){
+export async function addReview(lat, long, title, review, brate, db){
     var locationID
     //async function addlocation(){
         // Add a new location info.
@@ -22,7 +22,9 @@ export async function addReview(lat, long, review, db){
         // Add a new review with 
         const comment1 = await addDoc(collection(db, "review"), {
             ID: locationID,
+            name: title,
             comment: review,
+            rate: brate,
         });
         console.log("Document written with ID: ", comment1.id);
 
@@ -44,6 +46,20 @@ export async function findReview(IDN, db){
       querySnapshot.forEach((doc) => {
         // each review of same location would be here 
         console.log("review message is: ", doc.data().comment)
+    });
+
+
+}
+
+
+export async function findlocation(locationID, db){
+    var lat
+    var long
+    const q = query(collection(db, "location"), where("ID", "==", locationID));
+    const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        lat = doc.data().latitude
+        long = doc.data().longitude
     });
 
 
