@@ -10,10 +10,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<!-- Google Sign Ins-->
-		<meta name="google-signin-client_id" content="362540086629-u62gr52dtg937ta4g96brnarcndif8ck.apps.googleusercontent.com">
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
-
 		<!-- CSS Includes-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
@@ -112,9 +108,10 @@
 							<footer class="signin-buttons">
 								<div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-								<button id="signOut" style="background-color: orange;">Sign Out</button>
+								<a href='assets/pages/create_account.html'><button id="create-account" style="background-color: orange;">Create Account</button></a>
+								<a href='https://google.com'><button id="signOut" style="background-color: rgb(62, 216, 56);">Login</button></a>
 							</footer>
-							<div id="content"></div>
+
 
 						</div>
 					</section>
@@ -349,6 +346,7 @@
 		<script src="assets/js/map2.js"></script>
 
 		<script type="module" src="assets/js/test.google.firebase.js"> </script>
+		<script type="module" src="assets/js/google.firebase.login.js"> </script>
 	</body>
 	
 </html>
