@@ -284,7 +284,11 @@
 					<form method="post" action="#" id="userURL">
 						<div class="row">
 
-							<div class="col-6 col-12-mobile">	<h1>Review Title</h1><input type="text" name="title" placeholder="Title" /></div>
+							<div class="col-6 col-12-mobile">	
+								<h1>Review Title</h1>
+								<input type="text" name="title" id="reviewtitle" placeholder="Title" />
+							</div>
+
 							<div class="col-6 col-12-mobile">
 								<h1>Review Rating</h1>
                             </div>
@@ -306,7 +310,7 @@
 							</label>
 							
 							<div class="col-12">
-								<textarea name="Review Text" placeholder="Review Details"></textarea>
+								<textarea name="Review Text" id="Review message"  placeholder="Review Details"></textarea>
 							</div>
 							<div class="col-12">
 								<input type="file" id="cloudImage" name="cloudImage" accept=".jpg, .jpeg, .png" />

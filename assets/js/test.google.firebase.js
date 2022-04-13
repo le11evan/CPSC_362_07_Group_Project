@@ -43,27 +43,39 @@ const nowlocation = currentlocation();
 
 
 /* =========    add review   ==========*/
+var comment;
+var title;
+
+
+document.getElementById("Review message").addEventListener('change', reviewtextChanged);
+function reviewtextChanged(){
+    comment = document.getElementById("Review message").value;
+
+    //console.log(comment);
+}
+
+
+document.getElementById("reviewtitle").addEventListener('change', titletextChanged);
+function titletextChanged(){
+    title = document.getElementById("reviewtitle").value;
+
+    //console.log(title);
+}
+
 document.getElementById("submitButton").addEventListener("click", reviewfunction);
 
+
 function reviewfunction(){
-
-
     // getElement from html need title, rate, review
-
-    //var title = "" //defult
-    //var title = document.getElementsById("title").value;
-    var title = "title should be here"
-    
-    //var rate = 0 //defult
-    //var rate = document.getElementsById("rate").value;
-    var rate = 5
-
-    //var commentt = "" //defult
-    //var comment = document.getElementsById("review").value;
-    var review = "test for review part"
-    var comment = review
-
-    //current or
+    var rate = 0;
+    var raten = document.getElementsByName('rating');
+              
+    for(let i = 0; i < raten.length; i++) {
+        if(raten[i].checked){
+            rate = raten[i].value;
+        }
+    }
+    //current location
     var lat  = nowlocation[0] 
     var long = nowlocation[1]
 
@@ -72,7 +84,6 @@ function reviewfunction(){
 
     console.log("review added");
 }
-
 
 
 
