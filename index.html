@@ -281,29 +281,31 @@
 					<form method="post" action="#" id="userURL">
 						<div class="row">
 
-							<div class="col-6 col-12-mobile">	<h1>Review Title</h1><input type="text" name="title" placeholder="Title" /></div>
-							<div class="col-6 col-12-mobile">
-								<h1>Review Rating</h1>
-                            </div>
-							<div class="col-6 col-12-mobile"></div>
-							<label>
-								<input type="radio" id="5Star" name="rating" value="5" />5 Stars
-							</label>
-							<label>
-								<input type="radio" id="4Star" name="rating" value="4" />4 Stars
-							</label>
-							<label>
-								<input type="radio" id="3Star" name="rating" value="3" />3 Stars
-							</label>
-							<label>
-								<input type="radio" id="2Star" name="rating" value="2" />2 Stars
-							</label>
-							<label>
-								<input type="radio" id="1Star" name="rating" value="1" />1 Stars
-							</label>
+							<div class="col-6 col-12-mobile">	
+								<h1>Review Title</h1>
+								<input type="text" name="title" id="reviewtitle" placeholder="Title" />
+							</div>
+
+							<div id="col-6 col-12-mobile">
+								<h1> Rating </h1>
+								<div class="rating-group">
+									<input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+									<label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+									<label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+									<label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+									<label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+									<label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+									<input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+								</div>
+							</div>
+
 							
 							<div class="col-12">
-								<textarea name="Review Text" placeholder="Review Details"></textarea>
+								<textarea name="Review Text" id="Review message"  placeholder="Review Details"></textarea>
 							</div>
 							<div class="col-12">
 								<input type="file" id="cloudImage" name="cloudImage" accept=".jpg, .jpeg, .png" />

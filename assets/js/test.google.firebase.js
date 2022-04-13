@@ -51,32 +51,41 @@ const nowlocation = currentlocation();
 /* ==========  end  map ========================*/
 
 /* =========    add review   ==========*/
-document
-  .getElementById("submitButton")
-  .addEventListener("click", reviewfunction);
+var comment;
+var title;
 
-function reviewfunction() {
-  // getElement from html need title, rate, review
+document.getElementById("Review message").addEventListener('change', reviewtextChanged);
+function reviewtextChanged(){
+    comment = document.getElementById("Review message").value;
 
-  //var title = "" //defult
-  //var title = document.getElementsById("title").value;
-  var title = "title should be here";
+    //console.log(comment);
+}
 
-  //var rate = 0 //defult
-  //var rate = document.getElementsById("rate").value;
-  var rate = 5;
 
-  //var commentt = "" //defult
-  //var comment = document.getElementsById("review").value;
-  var review = "test for review part";
-  var comment = review;
+document.getElementById("reviewtitle").addEventListener('change', titletextChanged);
+function titletextChanged(){
+    title = document.getElementById("reviewtitle").value;
 
-  //current or
-  var lat = nowlocation[0];
-  var long = nowlocation[1];
+    //console.log(title);
+}
 
+document.getElementById("submitButton").addEventListener("click", reviewfunction);
+
+
+function reviewfunction(){
+    // getElement from html need title, rate, review
+    var rate = 0;
+    var raten = document.getElementsByName("rating");
+              
+    for(let i = 0; i < raten.length; i++) {
+        if(raten[i].checked){
+            rate = raten[i].value;
+        }
+    }
+    //current location
+    var lat  = nowlocation[0] 
+    var long = nowlocation[1]
   addReview(lat, long, title, comment, rate, db);
-
   console.log("review added");
 }
 
