@@ -75,7 +75,7 @@ document.getElementById("submitButton").addEventListener("click", reviewfunction
 function reviewfunction(){
     // getElement from html need title, rate, review
     var rate = 0;
-    var raten = document.getElementsByName('rating');
+    var raten = document.getElementsByName("rating");
               
     for(let i = 0; i < raten.length; i++) {
         if(raten[i].checked){
@@ -85,7 +85,7 @@ function reviewfunction(){
     //current location
     var lat  = nowlocation[0] 
     var long = nowlocation[1]
-
+  addReview(lat, long, title, comment, rate, db);
   console.log("review added");
 }
 
