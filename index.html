@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
 		<link rel="icon" type="image/x-icon" href="/images/Flushy-Logo-Favicon.png">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<!-- Mapbox includes -->
 		<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.0/mapbox-gl.js'></script>
@@ -31,13 +32,32 @@
 		<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 		<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-		<style>
 
-		
+		<style>
 
 		</style>
 	</head>
 	<body class="is-preload">
+
+		<!-- Scroll to top Button -->
+
+		<button id="btnScrollToTop">
+			<i class="material-icons">arrow_upward</i>
+		</button>
+
+		<script>
+			const btnScrollToTop = document.querySelector("#btnScrollToTop");
+
+			btnScrollToTop.addEventListener("click", function () {
+				//window.scrollTo(0,0);
+
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: "smooth"
+				});
+			});
+		</script>
 		
 		<!-- Header -->
 			<div id="header">
@@ -312,8 +332,8 @@
 					<ul class="copyright">
 						<li>&copy; Flushy. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
-
 			</div>
+
 
 		<!-- Scripts -->
 
