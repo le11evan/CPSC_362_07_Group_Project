@@ -19,7 +19,7 @@
     />
   </head>
   <body>
-    <form class="account-form" action="action_page.php" method="post">
+    <!-- <form class="account-form" action="action_page.php" method="post">
       <div class="container">
         <label for="uname"><b>First Name</b></label>
         <input
@@ -48,25 +48,38 @@
           required
         />
 
-        <button type="submit" class="login-btn">Login</button>
-        <!-- <label>
-          <input type="checkbox" checked="checked" name="remember" /> Remember
-          me
-        </label> -->
+        <input type="submit" class="sign-up" id="signUp">Login</input>
       </div>
+    </form> -->
 
-      <!-- <div class="container" style="background-color: #f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-      </div> -->
-    </form>
+    <input
+      type="text"
+      id="firstname"
+      name="firstname"
+      placeholder="firstname"
+    />
+    <input type="text" id="lastname" name="lastname" placeholder="lastname" />
+    <input type="text" id="username" name="username" placeholder="username" />
+    <input type="text" id="email" name="email" placeholder="E-mail" />
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Password"
+    />
+    <input type="submit" id="signUp" name="signUp" value="signUp" />
 
     <div class="center">
       <a class="back-btn" href="../../index.html"
         ><button style="background-color: orange">Back</button></a
       >
+      <a class="back-btn" href="../../index.html"
+        ><button style="background-color: rgb(62, 216, 56)">
+          I Already Have an Account!
+        </button></a
+      >
     </div>
 
-    <script src="../js/google.firebase.login.js"></script>
+    <script type="module" src="../js/google.firebase.login.js"></script>
   </body>
 </html>
