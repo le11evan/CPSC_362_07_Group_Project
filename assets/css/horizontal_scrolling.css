@@ -1,0 +1,41 @@
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+    .scrolling-wrapper > card {
+        flex: 0 0 auto;
+        margin-right: 3px;
+    }
+
+.card {
+    border: 2px solid $red;
+    width: auto;
+    height: auto;
+}
+
+.scrolling-wrapper {
+    height: 500px;
+    margin-bottom: 20px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+#gallery {
+    overflow: hidden;
+}
+
+    #gallery a {
+        display: block;
+        float: left;
+    }
+
+        #gallery a img {
+            display: block;
+            border: 0;
+        }

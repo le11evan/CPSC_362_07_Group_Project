@@ -95,8 +95,17 @@
 			});
 
 	// Scrolly.
-		$('.scrolly').scrolly();
+	$('.scrolly').scrolly();
 
+	// Poptrox
+	$(function () {
+
+		var foo = $('#gallery');
+		foo.poptrox({
+
+		});
+
+	});
 	// Header (narrower + mobile).
 
 		// Toggle.
