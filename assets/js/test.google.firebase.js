@@ -101,6 +101,7 @@ document.getElementById("submitButton").addEventListener("click", reviewfunction
 const nowlocation = currentlocation(); 
 
 function reviewfunction(){
+
   // getElement from html need title, rate, review
   var rate = 0;
   var raten = document.getElementsByClassName("rating__input");
@@ -110,12 +111,23 @@ function reviewfunction(){
           rate = raten[i].value;
       }
   }
-  //current location
-  var lat  = nowlocation[0] ;
+
+  var lat  = nowlocation[0];
   var long = nowlocation[1];
-  addReview(lat, long, title, comment, parseInt(rate), myfile,db);
-  //console.log("this is" , reviewid);
-  console.log("review added");
+
+  if(comment == null || title == null){
+
+  }else{
+    addReview(lat, long, title, comment, parseInt(rate), myfile,db);
+    //console.log("this is" , reviewid);
+    console.log("review added");
+  }
+  //current location
+
+
+
+  document.getElementById("userURL").reset();
+
 }
 
 
