@@ -42,7 +42,7 @@ const output = document.querySelector("fileOutput");
 /*========== map function========================*/
 
 //need location that able to add to review
-const nowlocation = currentlocation();
+
 
 //now using map2
 //locationID = showmap(db,nowlocation[0],nowlocation[1]); // an array set of nearby location ID
@@ -50,7 +50,13 @@ const nowlocation = currentlocation();
 
 /* ==========  end  map ========================*/
 
-/* =========    add review   ==========*/
+
+
+/*================================================================================================ */
+/* ===========================    add review   ====================================================*/
+
+
+/* ====================    fire base add text info ============================================*/
 var comment;
 var title;
 
@@ -68,26 +74,76 @@ function titletextChanged(){
 
     //console.log(title);
 }
+/* ====================    fire base add text info ============================================*/
+
+
+
+/*=====================    add image to fire base ==============================================*/
+const userImage = document.getElementById("cloudImage");
+userImage.addEventListener("change", updateImage);
+
+var myfile;
+
+function updateImage() {
+    const curFiles = userImage.files;
+    for (const file of curFiles) {
+
+      myfile = file;
+      console.log(myfile.name);
+    }
+  
+}
+
+
+//============   main review finction =============================================//
 
 document.getElementById("submitButton").addEventListener("click", reviewfunction);
-
+const nowlocation = currentlocation(); 
 
 function reviewfunction(){
-    // getElement from html need title, rate, review
-    var rate = 0;
-    var raten = document.getElementsByName("rating");
-              
-    for(let i = 0; i < raten.length; i++) {
-        if(raten[i].checked){
-            rate = raten[i].value;
-        }
-    }
-    //current location
-    var lat  = nowlocation[0] 
-    var long = nowlocation[1]
-  addReview(lat, long, title, comment, rate, db);
-  console.log("review added");
+
+  // getElement from html need title, rate, review
+  var rate = 0;
+  var raten = document.getElementsByClassName("rating__input");
+
+  for(let i = 0; i < raten.length; i++) {
+      if(raten[i].checked){
+          rate = raten[i].value;
+      }
+  }
+
+  var lat  = nowlocation[0];
+  var long = nowlocation[1];
+
+  if(comment == null || title == null){
+
+  }else{
+    addReview(lat, long, title, comment, parseInt(rate), myfile,db);
+    //console.log("this is" , reviewid);
+    console.log("review added");
+  }
+  //current location
+
+
+
+  document.getElementById("userURL").reset();
+
 }
+
+
+
+
+
+/* ================================ end review ============================================   */
+/* ========================================================================================   */
+
+
+
+
+
+
+
+
 
 /* ========== Google Firestore Implementation ========== */
 
@@ -106,14 +162,14 @@ dImg.src = "images/pic07.jpg";
 document.getElementById("defaultImage").appendChild(dImg);
 // --End Loading--
 
-document.getElementById("submitButton").addEventListener("click", getForm);
+//document.getElementById("submitButton").addEventListener("click", getForm);
 document.getElementById("freshButton").addEventListener("click", refreshImages);
 
 // Storage
 //document.getElementById("storageTestButton").addEventListener("click", addImage);
 
 const cloudImage = document.getElementById("cloudImage");
-cloudImage.addEventListener("change", updateImageSelector);
+//cloudImage.addEventListener("change", updateImageSelector);
 
 function bruh() {
   console.log("Bruh.");
@@ -121,7 +177,7 @@ function bruh() {
 
 // -Gets text in the "URL" form and passes it to Google Firestore-
 function getForm() {
-  var formText = document.getElementById("userURL").elements[0].value;
+  var formText = document.getElementById("userURL").elements[3].value;
   //document.getElementById("submitTest").innerHTML = formText;
 
   addImageURL(formText);
@@ -145,7 +201,7 @@ async function refreshImages() {
 }
 
 // - Contacts Google Firestore and attempts to store "text" as a field in the 'images-alpha' database
-async function addImageURL(text) {
+/*async function addImageURL(text) {
   try {
     const docRef = await addDoc(collection(db, "images-alpha"), { link: text });
     console.log("Document written with ID: ", docRef.id);
@@ -153,12 +209,14 @@ async function addImageURL(text) {
     console.error("Error adding document: ", e);
   }
 }
+*/
+
 
 /* ========== End Firestore Implementation ========== */
 
 /* ========== Google Storage Implementation ========== */
 
-async function updateImageSelector() {
+/*async function updateImageSelector() {
   const preview = document.getElementById("cloudImgPreview");
 
   while (preview.firstChild) {
@@ -210,5 +268,8 @@ async function updateImageSelector() {
     preview.appendChild(details);
   }
 }
+*/
+
+
 
 /* ========== End Google Storage ========== */
