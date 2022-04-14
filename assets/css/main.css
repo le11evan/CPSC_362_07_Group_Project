@@ -2085,53 +2085,52 @@ button,
 
 /* Radio WIP */
 .rating-group {
-    display: inline-flex;
-    padding-top: .5em;
+  display: inline-flex;
+  padding-top: 0.5em;
 }
 
 /* make hover effect work properly in IE */
 .rating__icon {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* hide radio inputs */
 .rating__input {
-    position: absolute !important;
-    left: -9999px !important;
+  position: absolute !important;
+  left: -9999px !important;
 }
 
 /* hide 'none' input from screenreaders */
 .rating__input--none {
-    display: none
+  display: none;
 }
 
 /* set icon padding and size */
 .rating__label {
-    cursor: pointer;
-    padding: 0 0.1em;
-    font-size: 2rem;
+  cursor: pointer;
+  padding: 0 0.1em;
+  font-size: 2rem;
 }
 
 /* set default star color */
 .rating__icon--star {
-    color: orange;
+  color: orange;
 }
 
 /* if any input is checked, make its following siblings grey */
 .rating__input:checked ~ .rating__label .rating__icon--star {
-    color: #ddd;
+  color: #ddd;
 }
 
 /* make all stars orange on rating group hover */
 .rating-group:hover .rating__label .rating__icon--star {
-    color: orange;
+  color: orange;
 }
 
 /* make hovered input's following siblings grey on hover */
 .rating__input:hover ~ .rating__label .rating__icon--star {
-    color: #ddd;
+  color: #ddd;
 }
-
 
 .login {
   background-color: rgb(0, 153, 255);
@@ -2842,9 +2841,27 @@ button:active,
 
 /***********************************************************************************/
 
-.center {
+/* .form-container {
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  height: 100vh;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 02)),
+    url("../../images/bathroom-background.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: black;
 }
+
+.bottom-buttons {
+  border: solid 2px red;
+  display: block;
+} */
+
+/*
+.input-field {
+  display: block;
+  margin: auto;
+} */

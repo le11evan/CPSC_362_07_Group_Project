@@ -8,6 +8,7 @@
 
     <!-- CSS Includes-->
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/create_account.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -19,65 +20,65 @@
     />
   </head>
   <body>
-    <!-- <form class="account-form" action="action_page.php" method="post">
-      <div class="container">
-        <label for="uname"><b>First Name</b></label>
-        <input
-          type="text"
-          placeholder="Enter First Name"
-          name="fname"
-          required
-        />
+    <div class="container">
+      <div class="form">
+        <h1 style="font-size: 30px" class="form-text">Create New Account</h1>
+        <hr class="form-line" />
+        <div class="form-input-group">
+          <input
+            class="input-field"
+            type="text"
+            id="firstname"
+            name="firstname"
+            placeholder="First Name"
+          />
+        </div>
 
-        <label for="lname"><b>Last Name</b></label>
-        <input
-          type="text"
-          placeholder="Enter Last Name"
-          name="lname"
-          required
-        />
+        <div class="form-input-group">
+          <input
+            class="input-field"
+            type="text"
+            id="lastname"
+            name="lastname"
+            placeholder="Last Name"
+          />
+        </div>
 
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required />
+        <div class="form-input-group">
+          <input
+            class="input-field"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="User Name"
+          />
+        </div>
 
-        <label for="psw"><b>Password</b></label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
+        <div class="form-input-group">
+          <input
+            class="input-field"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
 
-        <input type="submit" class="sign-up" id="signUp">Login</input>
+        <div class="form-input-group">
+          <input
+            class="input-field"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+
+        <button class="form-button" id="signUp">Sign Up</button>
+        <p class="form_text">
+          <a href="../../index.html">Already have an account? Login Here!</a>
+        </p>
       </div>
-    </form> -->
-
-    <input
-      type="text"
-      id="firstname"
-      name="firstname"
-      placeholder="firstname"
-    />
-    <input type="text" id="lastname" name="lastname" placeholder="lastname" />
-    <input type="text" id="username" name="username" placeholder="username" />
-    <input type="text" id="email" name="email" placeholder="E-mail" />
-    <input
-      type="password"
-      id="password"
-      name="password"
-      placeholder="Password"
-    />
-    <input type="submit" id="signUp" name="signUp" value="signUp" />
-
-    <div class="center">
-      <a class="back-btn" href="../../index.html"
-        ><button style="background-color: orange">Back</button></a
-      >
-      <a class="back-btn" href="../../index.html"
-        ><button style="background-color: rgb(62, 216, 56)">
-          I Already Have an Account!
-        </button></a
-      >
     </div>
 
     <script type="module" src="../js/google.firebase.login.js"></script>

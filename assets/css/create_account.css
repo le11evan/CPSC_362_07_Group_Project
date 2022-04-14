@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 02)),
+    url("../../images/bathroom-background.png");
+  background-size: cover;
+}
+
+/* Button */
+
+.container {
+  width: 400px;
+  max-width: 400px;
+  margin: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  background: white;
+}
+
+.form-input-group {
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.form-text {
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.form-button {
+  width: 100%;
+}
+
+.form-line {
+  border-bottom: 1px solid #8ebebc;
+}
