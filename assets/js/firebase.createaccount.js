@@ -37,6 +37,7 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app); // Initializing our database
 const auth = getAuth(); // Initiaizing auth
 
+// ================================ SIGNING IN (NEW ACCOUNT) ================================
 signUp.addEventListener("click", (e) => {
   console.log("Button clicked");
   var email = document.getElementById("email").value;
