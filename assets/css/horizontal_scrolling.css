@@ -26,16 +26,7 @@
     -webkit-overflow-scrolling: touch;
 }
 
-#gallery {
-    overflow: hidden;
+#gallery a img {
+    display: block;
+    border: 0;
 }
-
-    #gallery a {
-        display: block;
-        float: left;
-    }
-
-        #gallery a img {
-            display: block;
-            border: 0;
-        }
