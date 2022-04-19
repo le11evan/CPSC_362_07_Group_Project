@@ -2431,12 +2431,12 @@ button:active,
 }
 
 #main > section.one {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 02)),
-    url("../../images/bathroom-background.png");
-  background-position: center;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 02)),
+    url("../../images/bathroom-background.png"); */
+  /* background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: black;
+  background-color: black; */
 }
 
 #main > section.two {

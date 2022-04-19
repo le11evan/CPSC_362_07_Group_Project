@@ -13,7 +13,6 @@
 		<!-- CSS Includes-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/horizontal_scrolling.css" />
-		<link rel="stylesheet" href="assets/css/custom.css" />
 		<link rel="icon" type="image/x-icon" href="/images/Flushy-Logo-Favicon.png">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -59,7 +58,7 @@
 		<!-- Header -->
 		<div id="header">
 
-			<div class="top">
+			<div>
 
 				<!-- Logo -->
 				<div id="logo">
@@ -96,24 +95,23 @@
 
 			<!-- Intro -->
 			<section id="top" class="one dark cover">
-				<div class="container">
-
-					<header>
-						<h2 class="alt">The #1 Bathroom Review Website, <strong>Flushy</strong></a></h2>
-						<p>Leave reviews, find directions, and stay updated with various bathrooms across the world!</p>
-					</header>
-
-					<div>
-						<a href="#portfolio" class="button scrolly">Open Bathroom Mapper</a>
+				<div class="overlay">
+					<div class="container">
+						<header>
+							<h2 class="alt">The #1 Bathroom Review Website, <strong>Flushy</strong></a></h2>
+							<p>Leave reviews, find directions, and stay updated with various bathrooms across the world!</p>
+						</header>
+	
+						<div>
+							<a href="#portfolio" class="button scrolly">Open Bathroom Mapper</a>
+						</div>
+						<footer class="signin-buttons">
+							<div class="g-signin2" data-onsuccess="onSignIn"></div>
+	
+							<a href='assets/pages/create_account.html'><button id="create-account" style="background-color: orange;">Create Account</button></a>
+							<a href='assets/pages/login_existing_account.html'><button id="signOut" style="background-color: rgb(62, 216, 56);">Login</button></a>
+						</footer>
 					</div>
-					<footer class="signin-buttons">
-						<div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-						<a href='assets/pages/create_account.html'><button id="create-account" style="background-color: orange;">Create Account</button></a>
-						<a href='assets/pages/login_existing_account.html'><button id="signOut" style="background-color: rgb(62, 216, 56);">Login</button></a>
-					</footer>
-
-
 				</div>
 			</section>
 
@@ -396,6 +394,8 @@
 
 		<script type="module" src="assets/js/test.google.firebase.js"></script>
 		<script type="module" src="assets/js/google.firebase.login.js"></script>
+		<script type="module" src="assets/js/image.changer.js"></script>
+		
 	</body>
 	
 </html>
