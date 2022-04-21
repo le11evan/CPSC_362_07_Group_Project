@@ -39,18 +39,6 @@ const db = getFirestore(app);
 const storage = getStorage();
 const output = document.querySelector("fileOutput");
 
-/*========== map function========================*/
-
-//need location that able to add to review
-
-
-//now using map2
-//locationID = showmap(db,nowlocation[0],nowlocation[1]); // an array set of nearby location ID
-//console.log(locationID);
-
-/* ==========  end  map ========================*/
-
-
 
 /*================================================================================================ */
 /* ===========================    add review   ====================================================*/
@@ -115,23 +103,55 @@ function reviewfunction(){
   var lat  = nowlocation[0];
   var long = nowlocation[1];
 
-  if(comment == null || title == null){
-
+  if(comment == null || title == null || rate == 0){
+    const modal = document.getElementById("modalF");
+    openModal(modal);
   }else{
     addReview(lat, long, title, comment, parseInt(rate), myfile,db);
     //console.log("this is" , reviewid);
+    //Open notice
+    const modal = document.getElementById("modalS");
+    openModal(modal);
+
     console.log("review added");
+    document.getElementById("userURL").reset();
+
   }
   //current location
 
 
 
-  document.getElementById("userURL").reset();
-
 }
 
 
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
 
+const overlay = document.getElementById('overlay')
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
 
 
 /* ================================ end review ============================================   */
