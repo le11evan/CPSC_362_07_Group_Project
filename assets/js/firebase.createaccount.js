@@ -1,5 +1,3 @@
-// console.log("Hello World");
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import {
@@ -13,7 +11,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
+  // signOut,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -57,6 +55,7 @@ signUp.addEventListener("click", (e) => {
       });
 
       alert("user created!");
+      window.location.href = "../pages/login_existing_account.html";
     })
     .catch((error) => {
       // Failed to sign in

@@ -111,7 +111,9 @@
 							<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	
 							<a href='assets/pages/create_account.html'><button id="create-account" style="background-color: orange;">Create Account</button></a>
-							<a href='assets/pages/login_existing_account.html'><button id="signOut" style="background-color: rgb(62, 216, 56);">Login</button></a>
+							<a href='assets/pages/login_existing_account.html'><button id="signIn" style="background-color: rgb(62, 216, 56);">Login</button></a>
+							<!-- <a href='assets/pages/login_existing_account.html'><button id="signOut" style="background-color: rgba(243, 18, 18, 0.989);">Logout</button></a> -->
+							<button style="background-color: rgba(243, 18, 18, 0.989);" id="signOut">Logout</button>
 						</footer>
 					</div>
 				</div>
@@ -439,8 +441,10 @@
 		<script src="assets/js/map2.js"></script>
 
 		<script type="module" src="assets/js/test.google.firebase.js"></script>
-		<script type="module" src="assets/js/google.firebase.login.js"></script>
 		<script type="module" src="assets/js/image.changer.js"></script>
+		<!-- <script type="module" src="assets/js/firebase.login.js"></script> -->
+		<script type="module" src="assets/js/firebase.logout.js"></script>
+		<script type="module" src="assets/js/firebase.detect.login.js"></script>
 		
 	</body>
 	

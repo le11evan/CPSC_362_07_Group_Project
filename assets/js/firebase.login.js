@@ -11,7 +11,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
+  // signOut,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -54,6 +54,7 @@ login.addEventListener("click", (e) => {
       });
 
       alert("User logged in!");
+      window.location.href = "../../index.html";
     })
     .catch((error) => {
       const errorCode = error.code;
