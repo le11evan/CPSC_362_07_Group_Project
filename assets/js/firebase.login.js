@@ -34,7 +34,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app); // Initializing our database
 const auth = getAuth(); // Initiaizing auth
-
 // ================================ Logging in with an EXISTING user/pw ================================
 
 login.addEventListener("click", (e) => {
@@ -59,7 +58,8 @@ login.addEventListener("click", (e) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-
-      alert(errorMessage);
+      document.getElementById("e_msg").innerHTML = error.message
     });
 });
+
+
