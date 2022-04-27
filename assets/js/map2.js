@@ -30,6 +30,8 @@ function setupMap(center) {
         ]
       };
 
+    
+    
     const map = new mapboxgl.Map({
         container: 'map2',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -37,6 +39,17 @@ function setupMap(center) {
         zoom: 14
         })
 
+        // Add the control to the map.
+    const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        zoom: 14,
+        placeholder: '       Enter a location, e.g Target [Then Copy and Paste Address for Reviews]'
+      });
+
+      document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+  
+        // add navigation functionality
     const nav = new mapboxgl.NavigationControl();
         map.addControl(nav);
 
@@ -63,6 +76,9 @@ function setupMap(center) {
             )
             .addTo(map);
             }
+
+            
+            
 }
 
 
