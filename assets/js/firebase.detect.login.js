@@ -33,8 +33,15 @@ onAuthStateChanged(auth, (user) => {
     const uid = user.uid;
     const email = user.email;
     console.log("User is signed in! User is: " + email);
+
+    document.getElementById("signOut").style.display = "block";
+    document.getElementById("create-account").style.display = "none";
+    document.getElementById("signIn").style.display = "none";
   } else {
     // User is signed out
     console.log("User is signed out!");
+    document.getElementById("signOut").style.display = "none";
+    document.getElementById("create-account").style.display = "inline";
+    document.getElementById("signIn").style.display = "inline";
   }
 });
