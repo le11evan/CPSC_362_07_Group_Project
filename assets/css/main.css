@@ -2842,9 +2842,9 @@ button:active,
   margin-bottom: 2%;
 }
 
-
-
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -2910,40 +2910,15 @@ button:active,
   pointer-events: all;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /***********************************************************************************/
 
-/* .form-container {
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  height: 100vh;
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 02)),
-    url("../../images/bathroom-background.png");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-color: black;
+.signoutBtn {
+  background-color: #032f51;
+  width: 100%;
 }
 
-.bottom-buttons {
-  border: solid 2px red;
-  display: block;
-} */
-
-/*
-.input-field {
-  display: block;
-  margin: auto;
-} */
+.user-display {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 20px;
+}

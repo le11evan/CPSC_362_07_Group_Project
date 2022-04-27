@@ -27,6 +27,6 @@ const logout = document.querySelector("#signOut");
 logout.addEventListener("click", (e) => {
   e.preventDefault();
   auth.signOut().then(() => {
-    console.log("Signed out button clicked!");
+    location.reload();
   });
 });

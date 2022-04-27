@@ -37,11 +37,13 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("signOut").style.display = "block";
     document.getElementById("create-account").style.display = "none";
     document.getElementById("signIn").style.display = "none";
+    document.getElementById("user-display").style.display = "block";
   } else {
     // User is signed out
     console.log("User is signed out!");
     document.getElementById("signOut").style.display = "none";
     document.getElementById("create-account").style.display = "inline";
     document.getElementById("signIn").style.display = "inline";
+    document.getElementById("user-display").style.display = "none";
   }
 });
