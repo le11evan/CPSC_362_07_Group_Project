@@ -21,6 +21,8 @@
 		<link href='https://api.mapbox.com/mapbox-gl-js/v2.8.0/mapbox-gl.css' rel='stylesheet' />
 		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
 		<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">	
+		<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+		<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
 		
 		<!-- Leaflet includes -->
@@ -138,7 +140,7 @@
 
 					<style>
 						#map2 {
-							height: 50vh;
+							height: 45vh;
 							width: 100w;
 						}
 
@@ -159,8 +161,23 @@
 							text-align: center;
 							font-family: 'Open Sans', sans-serif;
 						}
+
+						#geocoder {
+								margin-bottom: 25px;
+								position: relative;
+								top: 10px;
+								left: -40px;
+								width: 50w;
+							}
+
+						.mapboxgl-ctrl-geocoder {
+							min-width: 100%;
+							}
+
 					</style>
 
+					<div id="geocoder"></div>
+					
 					<div id='map2'></div>
 
 				</div>
