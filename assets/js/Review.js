@@ -160,7 +160,7 @@ export async function openReciew(lat, long, db){
   newDiv.appendChild(card);
 
 
-  document.getElementById("rowpic").appendChild(newDiv);
+ document.getElementById("rowpic").appendChild(newDiv);
 
 
 
