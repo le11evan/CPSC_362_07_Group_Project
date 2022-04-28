@@ -102,7 +102,8 @@
 
 		var foo = $('#gallery');
 		foo.poptrox({
-			usepopupnav: true
+			usePopupNav: true,
+			usePopupCaption: true
 		});
 
 	});
