@@ -103,7 +103,8 @@
 		var foo = $('#gallery');
 		foo.poptrox({
 			usePopupNav: true,
-			usePopupCaption: true
+			usePopupCaption: true,
+			caption: { selector: "p1", remove: true }
 		});
 
 	});
