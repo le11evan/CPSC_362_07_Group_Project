@@ -30,20 +30,25 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
+
     const uid = user.uid;
     const email = user.email;
-    console.log("User is signed in! User is: " + email);
+    const username = user.username;
+
+    // console.log("User is signed in! User is: " + email + " " + uid);
 
     document.getElementById("signOut").style.display = "block";
     document.getElementById("create-account").style.display = "none";
     document.getElementById("signIn").style.display = "none";
-    document.getElementById("user-display").style.display = "block";
+    document.getElementById("login-display").style.display = "block";
+
+    document.getElementById("username-span").textContent = email;
   } else {
     // User is signed out
     console.log("User is signed out!");
     document.getElementById("signOut").style.display = "none";
     document.getElementById("create-account").style.display = "inline";
     document.getElementById("signIn").style.display = "inline";
-    document.getElementById("user-display").style.display = "none";
+    document.getElementById("login-display").style.display = "none";
   }
 });
