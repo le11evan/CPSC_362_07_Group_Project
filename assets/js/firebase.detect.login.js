@@ -26,11 +26,11 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app); // Initializing our database
 const auth = getAuth();
 
+// "Write a review" button, but it does not lead to anywhere... It is only
+// an alias to remind the user to create acc/login in order to write reviews
+const aliasButton = document.getElementById("write-review-alias-btn");
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-
     const uid = user.uid;
     const email = user.email;
     const username = user.username;
@@ -41,8 +41,15 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("create-account").style.display = "none";
     document.getElementById("signIn").style.display = "none";
     document.getElementById("login-display").style.display = "block";
-
     document.getElementById("username-span").textContent = email;
+
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    document.getElementById("contact").style.display = "inline";
+    document.getElementById("write-review-nav-btn").style.display = "inline";
+
+    aliasButton.style.display = "none";
+    document.getElementById("write-review-scroll-btn").style.display = "inline";
   } else {
     // User is signed out
     console.log("User is signed out!");
@@ -50,5 +57,11 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("create-account").style.display = "inline";
     document.getElementById("signIn").style.display = "inline";
     document.getElementById("login-display").style.display = "none";
+
+    document.getElementById("contact").style.display = "none";
+    document.getElementById("write-review-nav-btn").style.display = "none";
+
+    document.getElementById("write-review-alias-btn").style.display = "inline";
+    document.getElementById("write-review-scroll-btn").style.display = "none";
   }
 });
