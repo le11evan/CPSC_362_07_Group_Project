@@ -104,7 +104,7 @@
 		foo.poptrox({
 			usePopupNav: true,
 			usePopupCaption: true,
-			caption: { selector: "p1", remove: true }
+			caption: { selector: ".revText", remove: true }
 		});
 
 	});
