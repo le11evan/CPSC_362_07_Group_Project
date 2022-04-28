@@ -18,7 +18,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
 //import { showmap } from './map.js'
 import { currentlocation } from "./currentlocation.js";
-import { addReview, findReview } from "./Review.js";
+import { addReview, findReview, openReciew } from "./Review.js";
 
 console.log("Website Loaded Succesfully");
 
@@ -118,9 +118,6 @@ function reviewfunction(){
 
   }
   //current location
-
-
-
 }
 
 
@@ -160,7 +157,14 @@ function closeModal(modal) {
 
 
 
+/* ================================ read review ============================================   */
+/* ========================================================================================   */
 
+
+openReciew(nowlocation[0],nowlocation[1],db);
+
+
+//* ========================================================================================   */
 
 
 

@@ -67,6 +67,73 @@ async function addImageURL(text, review, db) {
 
 
 
+// dis play everynear by review to the console
+// need lat and long
+
+
+export async function openReciew(lat, long, db){
+  var LocationID =[];
+
+  const q = query(collection(db, "location"), where("latitude", ">=", lat-0.02),where("latitude", "<=", lat+0.02));
+  const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+
+      let lat1 = doc.data().latitude;
+      let long1 = doc.data().longitude;
+      if(long1 >= (long-0.02) && long1 <= (long+0.02)){
+        LocationID.push(doc.id);
+  }
+  
+  });
+
+  for(let i = 0; i < LocationID.length; i++) {
+    let ReviewID;
+    const r = query(collection(db, "review"), where("ID", "==", LocationID[i]));
+    const reviewquerySnapshot = await getDocs(r);
+    
+    reviewquerySnapshot.forEach((doc) => {
+        
+        let comment = doc.data().comment;
+        let rate = doc.data().rate;
+        let name = doc.data().name;
+        let picture = doc.id;
+        ReviewID= picture
+
+
+
+        console.log("name =" , name);
+        console.log("rate =" , rate);
+        console.log("comment =" , comment);
+
+    });
+
+    const p = query(collection(db, "images-alpha"), where("reviewid", "==", ReviewID));
+    const PicturequerySnapshot = await getDocs(p);
+    PicturequerySnapshot.forEach((doc) => {
+        let picturelink;
+        picturelink = doc.data().link;
+        console.log("link =" , picturelink);
+    });
+
+
+  }
+
+
+
+  
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 //read one location's review

@@ -9,7 +9,10 @@ export function currentlocation(){
         location.push(position.coords.longitude);  
     }
 
-    return location;
+    //return location;
 
+
+    var testlocation = [33.8953, 117.8821];
+    return testlocation;
 }
 
