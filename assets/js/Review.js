@@ -88,15 +88,21 @@ export async function openReciew(lat, long, db){
 
   for(let i = 0; i < LocationID.length; i++) {
     let ReviewID;
+    let picturelink;
+    let comment;
+    let rate;
+    let name;
+    let picture;
+
     const r = query(collection(db, "review"), where("ID", "==", LocationID[i]));
     const reviewquerySnapshot = await getDocs(r);
     
     reviewquerySnapshot.forEach((doc) => {
         
-        let comment = doc.data().comment;
-        let rate = doc.data().rate;
-        let name = doc.data().name;
-        let picture = doc.id;
+        comment = doc.data().comment;
+        rate = doc.data().rate;
+        name = doc.data().name;
+        picture = doc.id;
         ReviewID= picture
 
 
@@ -110,25 +116,62 @@ export async function openReciew(lat, long, db){
     const p = query(collection(db, "images-alpha"), where("reviewid", "==", ReviewID));
     const PicturequerySnapshot = await getDocs(p);
     PicturequerySnapshot.forEach((doc) => {
-        let picturelink;
+        
         picturelink = doc.data().link;
         console.log("link =" , picturelink);
     });
+
+
+    //add new Review box
+
+  //<div class="col-4 col-12-mobile">
+  const newDiv = document.createElement("div");
+  newDiv.className="col-4 col-12-mobile";
+
+  //<div class="card">
+  const card = document.createElement("div");
+  card.className ="card";
+
+  //<article class="item">
+  const article = document.createElement("article");
+  article.className="item";
+
+  //'<a href="images/pic07.jpg" class="image fit"><img src="images/pic07.jpg" alt="" /></a>'
+  const createA = document.createElement("a");
+  createA.setAttribute('href', picturelink);
+  createA.className = "image fit";
+
+
+  const createSrc = document.createElement('img');
+  createSrc.setAttribute('src', picturelink);
+  createSrc.setAttribute('alt', "");
+  createSrc.setAttribute('height', '500px');
+  createSrc.setAttribute('width', '300px');
+  createA.appendChild(createSrc);
+
+  const header = document.createElement("header");
+  const h3 = document.createElement("h3");
+  h3.innerHTML = name;
+
+  header.appendChild(h3);
+  article.appendChild(createA);
+  article.appendChild(header);
+  card.appendChild(article);
+  newDiv.appendChild(card);
+
+
+  document.getElementById("rowpic").appendChild(newDiv);
+
+
 
 
   }
 
 
 
-  
 
 
 }
-
-
-
-
-
 
 
 
@@ -163,3 +206,5 @@ export async function findlocation(locationID, db){
 
 
 }
+
+
