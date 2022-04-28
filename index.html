@@ -197,7 +197,7 @@
 					</header>
 					Previous restroom reviews from places near you.
 					<div class="scrolling-wrapper" id="gallery">
-						<div class="row">
+						<div class="row" id = "rowpic">
 							<div class="col-4 col-12-mobile">
 								<div class="card">
 									<article class="item">
@@ -279,48 +279,7 @@
 						</div>
 					</div>
 
-					<!-- Image Testing -->
 
-					<div class="row">
-						<div class="col-4 col-12-mobile">
-
-						</div>
-						<div class="col-4 col-12-mobile">
-							<p> </p>
-							<article class="item">
-								<a href="#" id="defaultImage" class="image fit"><img src="" alt="" /></a>
-								<a href="#" id="userImage1" class="image fit"><img src="" alt="" /></a>
-								<header>
-									<h3>Latest User Image</h3>
-								</header>
-							</article>
-
-							<!-- IMAGE URLs -->
-							<form action="#" method="post" id="alphaURL">
-								<article class="item">
-									<a href="#" class="image fit"><img src="" alt="" /></a>
-
-								</article>
-								<div class="col-6 col-12-mobile">
-									<input type="button" name="refresh" value="Refresh Images" id="freshButton" />
-								</div>
-							</form>
-
-							<!-- IMAGE FILEs -->
-							<form method="post" id="alphaImage" enctype="multipart/form-data">
-								<!-- Storage -->
-								<p> </p>
-								<!-- Moved to Contact Section -->
-								<div class="col-6 col-12-mobile">
-									<input type="button" name="Storage Test" value="Storage Test" id="storageTestButton" />
-								</div>
-								<div class="col-4 col-12-mobile" id="cloudImgPreview">
-									<p> No files currently selected for upload </p>
-								</div>
-							</form>
-						</div>
-					</div>
-					<!--End Image Testing-->
 
 				</div>
 			</section>
@@ -442,7 +401,7 @@
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 		<script src="assets/js/map2.js"></script>
 
-		<script type="module" src="assets/js/test.google.firebase.js"></script>
+		<script type="module" src="assets/js/firebase.review.js"></script>
 		<script type="module" src="assets/js/image.changer.js"></script>
 		<script type="module" src="assets/js/firebase.logout.js"></script>
 		<script type="module" src="assets/js/firebase.detect.login.js"></script>
