@@ -8,7 +8,7 @@
 
     <!-- CSS Includes-->
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/create_account.css" />
+    <link rel="stylesheet" href="../css/create_account.css" id="theme-link"/>
     <link
       rel="icon"
       type="image/x-icon"
@@ -63,5 +63,21 @@
 
     <script type="module" src="../js/firebase.login.js"></script>
     
+    <!-- DARK MODE BUTTON -->
+    <button class="btn-toggle">Toggle Dark-Mode</button>
+    <script>
+      const btn = document.querySelector(".btn-toggle");
+      const theme = document.querySelector("#theme-link");
+
+      btn.addEventListener("click", function() {
+        if (theme.getAttribute("href") == "../css/create_account.css") {
+          theme.href = "../css/create_account_darkmode.css";
+        }
+        else {
+          theme.href = "../css/create_account.css";
+        }
+      });
+    </script>
+    <!--==============-->
   </body>
 </html>
