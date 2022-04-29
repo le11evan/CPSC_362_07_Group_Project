@@ -136,32 +136,55 @@ export async function openReciew(lat, long, db){
   const article = document.createElement("article");
   article.className="item";
 
+    //no picture;
+    if(picturelink == null){
+      picturelink = "images/pic07.jpg"
+    }
+
   //'<a href="images/pic07.jpg" class="image fit"><img src="images/pic07.jpg" alt="" /></a>'
   const createA = document.createElement("a");
-  createA.setAttribute('href', picturelink);
+  //createA.setAttribute('href', picturelink);
   createA.className = "image fit";
 
-
   const createSrc = document.createElement('img');
-  createSrc.setAttribute('src', picturelink);
+  createSrc.src =  picturelink;
   createSrc.setAttribute('alt', "");
-  createSrc.setAttribute('height', '500px');
-  createSrc.setAttribute('width', '300px');
+
+
   createA.appendChild(createSrc);
+  
+  //<a href="images/Dummy Data/Bobbys-Lux.jpg" class="image fit"><img src="images/Dummy Data/Bobbys-Lux.jpg" alt="" />
+  //<p class="revText"> This is for the full review text. </p>
+  //</a>
+
+
+
+  const revText = document.createElement('p');
+  revText.className="revText";
+  revText.innerHTML = comment;
+  createA.appendChild(revText);
+
 
   const header = document.createElement("header");
   const h3 = document.createElement("h3");
   h3.innerHTML = name;
 
+  const h32 = document.createElement("h3");
+  h32.className ="rating__icon rating__icon--star fa fa-star";
+  var ratestring = rate + " stars"
+  h32.innerHTML = ratestring;
+  
+
   header.appendChild(h3);
+  header.appendChild(h32);
+
   article.appendChild(createA);
   article.appendChild(header);
   card.appendChild(article);
   newDiv.appendChild(card);
 
-
- document.getElementById("rowpic").appendChild(newDiv);
-
+  console.log(newDiv)
+  document.getElementById("rowpic").appendChild(newDiv);
 
 
 
