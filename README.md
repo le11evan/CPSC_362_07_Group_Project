@@ -23,6 +23,12 @@ Guang Chen - kp82611@csu.fullerton.edu
 
 Justin Bui - Justin_Bui12@csu.fullerton.edu
 
+Luciano Gibertoni - Lgibertoni@csu.fullerton.edu
+
+Collin Chiu - cchiu727@csu.fullerton.edu
+
+Akanksha Shukla - 1219aks@csu.fullerton.edu
+
 ## How to Run it Locally
 
 To run it locally, assuming you have Python 3 or above, type this into
