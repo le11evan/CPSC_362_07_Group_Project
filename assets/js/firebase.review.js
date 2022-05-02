@@ -21,6 +21,7 @@ import {
 import { currentlocation } from "./currentlocation.js";
 import { addReview, findReview, openReciew } from "./Review.js";
 import { Config } from "./config.js"
+//import {makeReview} from "./review.card.js"
 
 const firebaseConfig = {
   apiKey: Config.apiKey,
@@ -154,16 +155,5 @@ function closeModal(modal) {
 /* ================================ end review ============================================   */
 /* ========================================================================================   */
 
-
-
-
-/* ================================ read review ============================================   */
-/* ========================================================================================   */
-
-
-openReciew(nowlocation[0],nowlocation[1],db);
-
-
-//* ========================================================================================   */
 
 

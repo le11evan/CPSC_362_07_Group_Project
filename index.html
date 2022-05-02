@@ -188,6 +188,7 @@
 			</section>
 
 			<!-- Reviews Section -->
+			
 			<section id="about" class="three">
 
 				<div class="container">
@@ -196,7 +197,7 @@
 						<h2>Bathroom Reviews</h2>
 					</header>
 					Previous restroom reviews from places near you.
-					<div class="scrolling-wrapper" id="gallery">
+					<div class="scrolling-wrapper" id="gallery" onload="">
 						<div class="row" id = "rowpic">
 							<div class="col-4 col-12-mobile">
 								<div class="card">
@@ -421,11 +422,13 @@
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 		<script src="assets/js/map2.js"></script>
-
+		
+		<script type="module" src="assets/js/Review.read.js"></script>
 		<script type="module" src="assets/js/firebase.review.js"></script>
 		<script type="module" src="assets/js/image.changer.js"></script>
 		<script type="module" src="assets/js/firebase.logout.js"></script>
 		<script type="module" src="assets/js/firebase.detect.login.js"></script>
+		
 		
 	</body>
 	
