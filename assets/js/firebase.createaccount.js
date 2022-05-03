@@ -19,7 +19,7 @@ import {
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-import { Config } from "./config.js"
+import { Config } from "./config.js";
 
 const firebaseConfig = {
   apiKey: Config.apiKey,
@@ -47,12 +47,12 @@ signUp.addEventListener("click", (e) => {
       // Signed in
       const user = userCredential.user;
 
-      // Saving user's data onto our real time database
-      set(ref(database, "users/" + user.uid), {
-        username: username,
-        email: email,
-        password: password, // NOTE: NEVER SAVE YOUR PASSWORD TO THIS DATABASE, BUT WE ARE JUST DOING THIS FOR CONVENIENCE
-      });
+      // // Saving user's data onto our real time database
+      // set(ref(database, "users/" + user.uid), {
+      //   username: username,
+      //   email: email,
+      //   password: password, // NOTE: NEVER SAVE YOUR PASSWORD TO THIS DATABASE, BUT WE ARE JUST DOING THIS FOR CONVENIENCE
+      // });
 
       alert("user created!");
       window.location.href = "../pages/login_existing_account.html";

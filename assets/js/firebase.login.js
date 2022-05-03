@@ -19,7 +19,7 @@ import {
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-import { Config } from "./config.js"
+import { Config } from "./config.js";
 
 const firebaseConfig = {
   apiKey: Config.apiKey,
@@ -46,11 +46,11 @@ login.addEventListener("click", (e) => {
       // Signed in
       const user = userCredential.user;
 
-      // Updating the database with the data last logged in
-      const dt = new Date();
-      update(ref(database, "users/" + user.uid), {
-        last_login: dt,
-      });
+      // // Updating the real time database with the data last logged in
+      // const dt = new Date();
+      // update(ref(database, "users/" + user.uid), {
+      //   last_login: dt,
+      // });
 
       alert("User logged in!");
       window.location.href = "../../index.html";
@@ -58,8 +58,6 @@ login.addEventListener("click", (e) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      document.getElementById("e_msg").innerHTML = error.message
+      document.getElementById("e_msg").innerHTML = error.message;
     });
 });
-
-
