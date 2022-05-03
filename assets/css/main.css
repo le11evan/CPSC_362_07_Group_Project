@@ -1,3 +1,4 @@
+
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
 
@@ -2784,6 +2785,129 @@ button:active,
   }
 
   .container {
+  ul.icons a {
+    width: 2em;
+    font-size: 1.25em;
+  }
+
+  /* Main */
+
+  #main > section {
+    padding: 2em 0;
+  }
+
+  #main section.cover {
+    padding: 4em 0em;
+  }
+
+  #main section.cover header {
+    padding: 0 1em;
+  }
+
+  /* Footer */
+
+  #footer .copyright li {
+    display: block;
+    line-height: 1.25em;
+    border: 0;
+    padding: 0;
+    margin: 1em 0 0 0;
+  }
+
+  #footer .copyright li:first-child {
+    margin-top: 0;
+  }
+}
+
+#btnScrollToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  z-index: 99 !important;
+}
+
+#btnScrollToTop:active {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+#spacebetween {
+  margin-bottom: 2%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: rgb(44, 44, 114);
+  width: 400px;
+  max-width: 80%;
+  color: white;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.modal-header {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(110, 110, 110, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/***********************************************************************************/
     padding: 0 15px 0 15px;
   }
 
