@@ -40,8 +40,8 @@ var long = location[1];
     });
     
 
-    //only pull 5 comment
-    for(let i = 0; i < 9; i++) {
+    //only pull 9 comment // not use now
+    for(let i = 0; i < LocationID.length; i++) {
       let ReviewID;
       let picturelink;
       let comment;
@@ -138,7 +138,15 @@ var long = location[1];
   
     document.getElementById("rowpic").appendChild(newDiv);
   
-    $(function () {
+
+  
+    }
+  
+    
+ 	// Poptrox
+
+  
+   $(function () {
 		var foo = $('#gallery');
 		foo.poptrox({
 			usePopupNav: true,
@@ -147,12 +155,4 @@ var long = location[1];
 		});
 
 	  });   
-  
-    }
-  
-    
- 	// Poptrox
-
-  
-  
   

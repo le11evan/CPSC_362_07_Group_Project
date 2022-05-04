@@ -98,16 +98,7 @@
 	$('.scrolly').scrolly();
 
 	// Poptrox
-	$(function () {
-
-		var foo = $('#gallery');
-		foo.poptrox({
-			usePopupNav: true,
-			usePopupCaption: true,
-			caption: { selector: ".revText", remove: true }
-		});
-
-	});
+	//need run after load firebase check Read.review.js
 
 	// Header (narrower + mobile).
 
