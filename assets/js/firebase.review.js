@@ -48,6 +48,9 @@ const output = document.querySelector("fileOutput");
 /* ====================    fire base add text info ============================================*/
 var comment;
 var title;
+var street;
+var state;
+var postal;
 
 document.getElementById("Review message").addEventListener('change', reviewtextChanged);
 function reviewtextChanged(){
@@ -56,12 +59,32 @@ function reviewtextChanged(){
     //console.log(comment);
 }
 
-
 document.getElementById("reviewtitle").addEventListener('change', titletextChanged);
-function titletextChanged(){
+function titletextChanged() {
     title = document.getElementById("reviewtitle").value;
 
     //console.log(title);
+}
+
+document.getElementById("reviewstreet").addEventListener('change', streettextChanged);
+function streettextChanged(){
+    street = document.getElementById("reviewstreet").value;
+
+    //console.log(street);
+}
+
+document.getElementById("reviewstate").addEventListener('change', statetextChanged);
+function statetextChanged() {
+    state = document.getElementById("reviewstate").value;
+
+    //console.log(state);
+}
+
+document.getElementById("reviewpostal").addEventListener('change', postaltextChanged);
+function postaltextChanged() {
+    postal = document.getElementById("reviewpostal").value;
+
+    //console.log(postal);
 }
 /* ====================    fire base add text info ============================================*/
 
@@ -91,7 +114,7 @@ const nowlocation = currentlocation();
 
 function reviewfunction(){
 
-  // getElement from html need title, rate, review
+  // getElement from html need title, rate, review, address
   var rate = 0;
   var raten = document.getElementsByClassName("rating__input");
 
@@ -104,11 +127,11 @@ function reviewfunction(){
   var lat  = nowlocation[0];
   var long = nowlocation[1];
 
-  if(comment == null || title == null || rate == 0){
+  if(comment == null || title == null || street == null || state == null || postal == null || rate == 0){
     const modal = document.getElementById("modalF");
     openModal(modal);
   }else{
-    addReview(lat, long, title, comment, parseInt(rate), myfile,db);
+    addReview(lat, long, title, comment, street, state, postal, parseInt(rate), myfile,db);
     //console.log("this is" , reviewid);
     //Open notice
     const modal = document.getElementById("modalS");
