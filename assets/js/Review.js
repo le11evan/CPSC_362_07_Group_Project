@@ -12,7 +12,7 @@ import {getStorage, ref, uploadBytes, getDownloadURL} from "https://www.gstatic.
 
 
 
-export async function addReview(lat, long, title, review, brate, myfile, db){
+export async function addReview(lat, long, title, review, bstreet, bstate, bpostal, brate, myfile, db){
     const storage = getStorage();
 
     var locationID
@@ -30,6 +30,9 @@ export async function addReview(lat, long, title, review, brate, myfile, db){
             name: title,
             comment: review,
             rate: brate,
+            street: bstreet,
+            state: bstate,
+            postal: bpostal
         });
         console.log("Document written with ID: ", comment1.id);
         var reviewid =comment1.id
