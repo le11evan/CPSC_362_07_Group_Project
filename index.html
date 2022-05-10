@@ -104,7 +104,7 @@
 							<h2 class="alt">The #1 Bathroom Review Website, <strong>Flushy</strong></a></h2>
 							<p>Leave reviews, find directions, and stay updated with various bathrooms across the world!</p>
 						</header>
-	
+
 						<div>
 							<a href="#portfolio" class="button scrolly">Open Bathroom Mapper</a>
 							<p id="login-display">Logged in as: <span id="username-span"></span></p>
@@ -112,7 +112,7 @@
 						</div>
 						<footer class="signin-buttons">
 							<div class="g-signin2" data-onsuccess="onSignIn"></div>
-	
+
 							<a href='assets/pages/create_account.html'><button id="create-account" style="background-color: orange;">Create Account</button></a>
 							<a href='assets/pages/login_existing_account.html'><button id="signIn" style="background-color: rgb(62, 216, 56);">Login</button></a>
 							<!-- <a href='#'><button id="signOut" style="background-color: rgba(243, 18, 18, 0.989)">Logout</button></a> -->
@@ -168,28 +168,27 @@
 						}
 
 						#geocoder {
-								margin-bottom: 25px;
-								position: relative;
-								top: 10px;
-								left: -40px;
-								width: 50w;
-							}
+							margin-bottom: 25px;
+							position: relative;
+							top: 10px;
+							left: -40px;
+							width: 50w;
+						}
 
 						.mapboxgl-ctrl-geocoder {
 							min-width: 100%;
-							}
-
+						}
 					</style>
 
 					<div id="geocoder"></div>
-					
+
 					<div id='map2'></div>
 
 				</div>
 			</section>
 
 			<!-- Reviews Section -->
-			
+
 			<section id="about" class="three">
 
 				<div class="container">
@@ -199,11 +198,12 @@
 					</header>
 					Previous restroom reviews from places near you.
 					<div class="scrolling-wrapper" id="gallery" onload="">
-						<div class="row" id = "rowpic">
+						<div class="row" id="rowpic">
 							<div class="col-4 col-12-mobile">
 								<div class="card">
 									<article class="item">
-										<a href="images/Dummy Data/Bobbys-Lux.jpg" class="image fit"><img src="images/Dummy Data/Bobbys-Lux.jpg" alt="" />
+										<a href="images/Dummy Data/Bobbys-Lux.jpg" class="image fit">
+											<img src="images/Dummy Data/Bobbys-Lux.jpg" alt="" />
 											<p class="revText"> This is for the full review text. </p>
 										</a>
 										<header>
@@ -212,7 +212,8 @@
 										</header>
 									</article>
 									<article class="item">
-										<a href="images/Dummy Data/Dell-Taco.jpg" class="image fit"><img src="images/Dummy Data/Dell-Taco.jpg" alt="" />
+										<a href="images/Dummy Data/Dell-Taco.jpg" class="image fit">
+											<img src="images/Dummy Data/Dell-Taco.jpg" alt="" />
 											<p class="revText"> This is for the full review text. </p>
 										</a>
 										<header>
@@ -225,7 +226,8 @@
 							<div class="col-4 col-12-mobile">
 								<div class="card">
 									<article class="item">
-										<a href="images/Dummy Data/Lucky-Diamond-Hotel.jpg" class="image fit"><img src="images/Dummy Data/Lucky-Diamond-Hotel.jpg" alt="" />
+										<a href="images/Dummy Data/Lucky-Diamond-Hotel.jpg" class="image fit">
+											<img src="images/Dummy Data/Lucky-Diamond-Hotel.jpg" alt="" />
 											<p class="revText"> This is for the full review text. </p>
 										</a>
 										<header>
@@ -234,7 +236,8 @@
 										</header>
 									</article>
 									<article class="item">
-										<a href="images/Dummy Data/Huntington-Beach.jpg" class="image fit"><img src="images/Dummy Data/Huntington-Beach.jpg" alt="" />
+										<a href="images/Dummy Data/Huntington-Beach.jpg" class="image fit">
+											<img src="images/Dummy Data/Huntington-Beach.jpg" alt="" />
 											<p class="revText"> This is for the full review text. </p>
 										</a>
 										<header>
@@ -247,7 +250,8 @@
 							<div class="col-4 col-12-mobile">
 								<div class="card">
 									<article class="item">
-										<a href="images/Dummy Data/McDonalds.jpg" class="image fit"><img src="images/Dummy Data/McDonalds.jpg" alt="" />
+										<a href="images/Dummy Data/McDonalds.jpg" class="image fit">
+											<img src="images/Dummy Data/McDonalds.jpg" alt="" />
 											<p class="revText"> This is for the full review text. </p>
 										</a>
 										<header>
@@ -256,7 +260,8 @@
 										</header>
 									</article>
 									<article class="item">
-										<a href="images/Dummy Data/AMPM.jpg" class="image fit"><img src="images/Dummy Data/AMPM.jpg" alt="" />
+										<a href="images/Dummy Data/AMPM.jpg" class="image fit">
+											<img src="images/Dummy Data/AMPM.jpg" alt="" />
 											<p class="revText"> This is for the full review text. </p>
 										</a>
 										<header>
@@ -387,8 +392,8 @@
 
 		<div class="modal" id="modalS">
 			<div class="modal-header">
-			  <div class="title">successful</div>
-			  <button data-close-button class="close-button">&times;</button>
+				<div class="title">successful</div>
+				<button data-close-button class="close-button">&times;</button>
 			</div>
 			<div class="review successful">
 				review add successful
@@ -396,11 +401,11 @@
 		</div>
 		<div class="modal" id="modalF">
 			<div class="modal-header">
-			  <div class="title">ERROR</div>
-			  <button data-close-button class="close-button">&times;</button>
+				<div class="title">ERROR</div>
+				<button data-close-button class="close-button">&times;</button>
 			</div>
 			<div class="review unsuccessful">
-				Please fill all information			  
+				Please fill all information
 			</div>
 		</div>
 		<div id="overlay"></div>
@@ -437,14 +442,14 @@
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 		<script src="assets/js/map2.js"></script>
-		
-		<script type="module" src="assets/js/Review.read.js"></script>
+
+		<!-- <script type="module" src="assets/js/Review.read.js"></script> -->
 		<script type="module" src="assets/js/firebase.review.js"></script>
 		<script type="module" src="assets/js/image.changer.js"></script>
 		<script type="module" src="assets/js/firebase.logout.js"></script>
 		<script type="module" src="assets/js/firebase.detect.login.js"></script>
-		
-		
+
+
 	</body>
 	
 </html>
