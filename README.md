@@ -13,6 +13,12 @@ to convenient and sanitary bathrooms.
 
 Link to website: https://flushy.netlify.app/
 
+## Reading from Our Database (Iteration 5)
+Available to you is our Google Firestore database, which is a database that stores reviews for bathrooms.
+Below is a link to a repository that has a quick run-down on how to start reading from our database in your project!
+
+Link: https://github.com/isaiahcabugos/FlushyFirebaseTutorial
+
 ## Members
 
 Evan Le - le11evan@csu.fullerton.edu
