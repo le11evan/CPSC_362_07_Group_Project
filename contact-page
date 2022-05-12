@@ -1,0 +1,94 @@
+<!--Header-->
+<html>
+<head>
+  <link rel="stylesheet" href="../css/main.css" />
+
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+
+</style>
+</head>
+<body>
+
+<h1 style="background-color:DodgerBlue;">Contact Us!</h1>
+<p>This is a contact page for the Creators.<br>
+<br>
+<br>
+</p>
+<!--Header-->
+
+<main>
+
+<!--Contact 1-->
+  <article>
+    <h1>Justin Bui</h1>
+    <p>Justin_Bui12@csu.fullerton.edu</p>
+    <p> https://github.com/BuiTheBoi<br>
+    <p>Computer Science, 3rd year<br>
+    <br>
+    </p>
+  </article>
+<!--Contact 2-->
+  <article>
+    <h1>Isaiah Cabugos</h1>
+    <p>IsaiahCabugos@csu.fullerton.edu</p>
+    <p> https://github.com/isaiahcabugos<br>
+    <p>Computer Science, 4th year<br>
+    <br>
+    </p>
+  </article>
+<!--Contact 3-->
+  <article>
+    <h1>Luciano Gibertoni</h1>
+    <p>Lgibertoni@csu.fullerton.edu</p>
+    <p>https://github.com/lg13826<br>
+    <p>Computer Science, 4th year<br>
+    <br>
+    </p>
+
+  </article>
+<!--Contact 4-->
+  <article>
+    <h1>Collin Chiu</h1>
+    <p>cchiu727@csu.fullerton.edu</p>
+    <p>https://github.com/cchiu727<br>
+    <p>Computer Science, 3rd year<br>
+    <br>
+    </p>
+  </article>
+<!--Contact 5-->
+  <article>
+    <h1>Evan Le</h1>
+    <p>le11evan@csu.fullerton.edu</p>
+    <p>https://github.com/le11evan<br>
+    <p>Computer Science, 5th year<br>
+    <br>
+    </p>
+  </article>
+<!--Contact 6-->
+  <article>
+    <h1>Guang Chen</h1>
+    <p>kp82611@csu.fullerton.edu</p>
+    <p>https://github.com/kkp82611<br>
+    <p>Computer Science, 4th year<br>
+    <br>
+    </p>
+  </article>
+<!--Contact 7-->
+  <article>
+    <h1>Akanksha Shukla</h1>
+    <p>1219aks@csu.fullerton.edu</p>
+    <p>https://github.com/1219aks<br>
+    <p>Computer Science, 4th year<br>
+    <br>
+    </p>
+  </article>
+
+</main>
+
+</body>
+</html>
+
+
+<!--Contacts-->
