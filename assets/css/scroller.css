@@ -4,8 +4,9 @@
     line-height: 1.2em;
     position: relative;
     overflow: hidden;
-    width: 10em;
-    z-index: 1
+    width: 67em;
+    text-align:center;
+    margin-top: 30px;
   }
   .scroller > span {
     position: absolute;
