@@ -14,12 +14,14 @@ to convenient and sanitary bathrooms.
 Link to website: https://flushy.netlify.app/
 
 ## Reading from Our Database (Iteration 5)
+
 Available to you is our Google Firestore database, which is a database that stores reviews for bathrooms.
 Below is a link to a repository that has a quick run-down on how to start reading from our database in your project!
 
 Link: https://github.com/isaiahcabugos/FlushyFirebaseTutorial
 
 ## MapBox Feature (Iteration 5)
+
 Available to you is our Mapbox Feature, which is basically a map that can be used by users to find locations to places.
 Below is a link to a repository that has a demo of the map, and code showing you can implement the map, as well as guides and documentation on how to customize the map to your liking!
 
@@ -43,11 +45,7 @@ Akanksha Shukla - 1219aks@csu.fullerton.edu
 
 ## How to Run it Locally
 
-To run it locally, assuming you have Python 3 or above, type this into
-your terminal:
+To run it locally, assuming you are using VS Code, you can download the Live Server
+extension to run this on a local host server.
 
-```
-python3 -m http.server
-```
-
-Then on your browser, search up localhost:8000
+<img src="images/live-server-1.png">

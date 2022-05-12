@@ -1,11 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import {
-  getDatabase,
-  set,
-  ref,
-  update,
-} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+// import {
+//   getDatabase,
+//   set,
+//   ref,
+//   update,
+// } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -13,6 +13,11 @@ import {
   onAuthStateChanged,
   // signOut,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -30,9 +35,10 @@ const firebaseConfig = {
   appId: Config.appId,
   measurementId: Config.measurementId,
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app); // Initializing our database
+// const database = getDatabase(app); // Initializing our database
 const auth = getAuth(); // Initiaizing auth
 
 // ================================ SIGNING IN (NEW ACCOUNT) ================================
