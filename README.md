@@ -19,6 +19,12 @@ Below is a link to a repository that has a quick run-down on how to start readin
 
 Link: https://github.com/isaiahcabugos/FlushyFirebaseTutorial
 
+## MapBox Feature (Iteration 5)
+Available to you is our Mapbox Feature, which is basically a map that can be used by users to find locations to places.
+Below is a link to a repository that has a demo of the map, and code showing you can implement the map, as well as guides and documentation on how to customize the map to your liking!
+
+Link: https://github.com/le11evan/Flushy_Mapbox
+
 ## Members
 
 Evan Le - le11evan@csu.fullerton.edu
