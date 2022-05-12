@@ -8,7 +8,7 @@
 
     <!-- CSS Includes-->
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/create_account.css" id="theme-link"/>
+    <link rel="stylesheet" href="../css/create_account.css" id="theme-link" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -97,12 +97,15 @@
       const btn = document.querySelector(".btn-toggle");
       const theme = document.querySelector("#theme-link");
 
-      btn.addEventListener("click", function() {
+      btn.addEventListener("click", function () {
         if (theme.getAttribute("href") == "../css/create_account.css") {
           theme.href = "../css/create_account_darkmode.css";
-        }
-        else {
+          // btn.style.backgroundColor = "black";
+          // btn.style.textColor = "white";
+        } else {
           theme.href = "../css/create_account.css";
+          // btn.style.backgroundColor = "white";
+          // btn.style.textColor = "black";
         }
       });
     </script>

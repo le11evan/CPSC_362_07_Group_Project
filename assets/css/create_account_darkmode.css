@@ -16,11 +16,17 @@ body {
 .btn-toggle {
   left: 400px;
   bottom: 300px;
+  background-color: rgba(0, 0, 0, 0.405);
+}
+
+.btn-toggle:hover {
+  transition-duration: 0.35s;
+  background-color: rgba(130, 130, 130, 0.405);
 }
 
 /* dark mode elements */
 .form-text {
-  color:white;
+  color: white;
 }
 
 .container {
@@ -31,7 +37,7 @@ body {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
   background: #3c3c3c;
-  color:white; 
+  color: white;
   position: fixed;
 }
 
@@ -40,7 +46,7 @@ body {
 }
 
 .input-field {
-  width: 100%;  
+  width: 100%;
 }
 
 .form-text {
