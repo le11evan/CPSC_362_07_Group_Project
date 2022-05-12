@@ -2082,6 +2082,7 @@ button,
   -webkit-transition: background-color 0.35s ease-in-out;
   -ms-transition: background-color 0.35s ease-in-out;
   transition: background-color 0.35s ease-in-out;
+
 }
 
 /* Radio WIP */
@@ -3046,4 +3047,28 @@ button:active,
   text-align: center;
   padding-top: 10px;
   font-size: 20px;
+}
+
+
+.typing {
+  margin-left: 10px;
+  position: relative;
+}
+
+.typing:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 90%;
+  border-right: 2px solid white;
+  animation: blink 0.5s infinite ease;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
